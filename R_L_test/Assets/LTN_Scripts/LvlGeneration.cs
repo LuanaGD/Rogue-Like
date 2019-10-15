@@ -12,6 +12,7 @@ public class LvlGeneration : MonoBehaviour
     {
         int randRoomSpawn = Random.Range(0, roomSpawner.Length);
         transform.position = roomSpawner[randRoomSpawn].position;
+        int randRoomType = Random.Range(0, rooms.Length);
     }
 
     // Update is called once per frame
