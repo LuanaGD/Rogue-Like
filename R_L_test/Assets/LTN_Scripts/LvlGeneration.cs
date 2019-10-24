@@ -10,6 +10,9 @@ public class LvlGeneration : MonoBehaviour
     public int direction;
     public float moveAmount;
 
+    private float timeBtwRoom;
+    private float startTimeBtwRoom = 0.25f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,15 @@ public class LvlGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (timeBtwRoom <= 0)
+        {
+            MovPos();
+            timeBtwRoom = startTimeBtwRoom;
+        }
+        else
+        {
+            timeBtwRoom -= Time.deltaTime;
+        }
     }
 
     private void MovPos()
@@ -41,8 +52,13 @@ public class LvlGeneration : MonoBehaviour
             Vector2 newPos = new Vector2(transform.position.x - moveAmount, transform.position.y);
             transform.position = newPos;
         }
+        else if (direction == 5)
+        {
+            Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmount);
+            transform.position = newPos;
+        }
 
         Instantiate(rooms[0], transform.position, Quaternion.identity);
-        direction = Random.Range(1, 5);
+        direction = Random.Range(1, 6);
     }
 }
