@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/LTN_Scenes/_testScene.unity
+- path: Assets/RES_Scenes/TestingCharacterMoov.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
