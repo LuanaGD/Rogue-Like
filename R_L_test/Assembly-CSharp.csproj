@@ -63,9 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LTN_Scripts\LvlGeneration.cs" />
-    <Compile Include="Assets\LTN_Scripts\SpawnTile.cs" />
-    <Compile Include="Assets\RES_Scrpit\Test.cs" />
+    <Compile Include="Assets\RES_Scrpit\PlayerMoovement.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Rémi/Documents/Cours/Rogue like/build unity/Rogue-Like/R_L_test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
