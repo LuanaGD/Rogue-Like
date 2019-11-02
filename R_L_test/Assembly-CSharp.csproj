@@ -63,7 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\RES_Scrpit\HealTestHealth.cs" />
+    <Compile Include="Assets\RES_Scrpit\PlayerHealth.cs" />
     <Compile Include="Assets\RES_Scrpit\PlayerMoovement.cs" />
+    <Compile Include="Assets\RES_Scrpit\TrapTestHealth.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Rémi/Documents/Cours/Rogue like/build unity/Rogue-Like/R_L_test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
