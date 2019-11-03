@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 7225276157645577034}
   - component: {fileID: 8746085822864551937}
   - component: {fileID: 2130268433948415688}
-  - component: {fileID: 5122624971751977979}
-  - component: {fileID: 4277093484355406467}
   - component: {fileID: 7525590254236974559}
+  - component: {fileID: 3131434381876354388}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -105,38 +104,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5122624971751977979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7226082487293605207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa24ec4d847b0e14684049abb954d938, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerMoovAvailable: 0
-  speed: 250
-  moove: {x: 0, y: 0, z: 0}
-  playerRgb: {fileID: 2130268433948415688}
-  horizontalMoove: 0
-  verticalMoove: 0
---- !u!114 &4277093484355406467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7226082487293605207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dc66730ee1d61d4eb0d022553f493e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMaxHp: 100
-  playerHp: 100
 --- !u!70 &7525590254236974559
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -153,3 +120,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0.058822274, y: -0.041175365}
   m_Size: {x: 0.5317937, y: 1.0141352}
   m_Direction: 0
+--- !u!114 &3131434381876354388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7226082487293605207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b26471b9a9988245882681d1521116d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMaxHp: 100
+  playerHp: 0
+  isPlayerMoovAvailable: 1
+  speed: 250
+  moove: {x: 0, y: 0, z: 0}
+  playerRgb: {fileID: 2130268433948415688}
+  horizontalMoove: 0
+  verticalMoove: 0

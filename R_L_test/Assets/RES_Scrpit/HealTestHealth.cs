@@ -9,6 +9,6 @@ public class HealTestHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.GetComponent<PlayerHealth>().PlayerIsHealing(healAmount);
+        Player.GetComponent<PlayerManager>().PlayerIsHealing(healAmount);
     }
 }

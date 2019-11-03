@@ -7,6 +7,6 @@ public class TrapTestHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.GetComponent<PlayerHealth>().PlayerIsTakingDmg(trapDmg);
+        Player.GetComponent<PlayerManager>().PlayerIsTakingDmg(trapDmg);
     }
 }
