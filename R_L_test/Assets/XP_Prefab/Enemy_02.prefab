@@ -70,7 +70,8 @@ PrefabInstance:
     - target: {fileID: 794654396, guid: 849fe973f6154274bbbaa736c4dfdf4d, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6000375405814676764, guid: 71e46a648ef1e2c4bbafb8d8481e8565,
+        type: 3}
     - target: {fileID: 794654396, guid: 849fe973f6154274bbbaa736c4dfdf4d, type: 3}
       propertyPath: rb
       value: 

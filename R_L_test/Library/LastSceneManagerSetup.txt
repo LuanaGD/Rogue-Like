@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/RES_Scenes/RES_Moovement_Life.unity
+- path: Assets/XP_Scenes/Xp_Enemy.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

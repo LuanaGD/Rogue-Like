@@ -43,13 +43,6 @@ public class PlayerManager : MonoBehaviour
 
         //classic moovement gestion with left joystick: end
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isPlayerMoovAvailable = false;
-            Debug.Log("Space pressed");
-            playerRgb.velocity = new Vector3(0, 0, 0);
-        }
-
     }
 
     // Health System
