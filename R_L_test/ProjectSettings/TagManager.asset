@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ennemie
+  - Weapon
+  - Item
+  - SpawnRoomPoint
+  - Room
   layers:
   - Default
   - TransparentFX
