@@ -32,6 +32,7 @@ public class PlayerManager : MonoBehaviour
 
         horizontalMoove = Input.GetAxis("Horizontal");
         verticalMoove = Input.GetAxis("Vertical");
+        
         moove = new Vector3(horizontalMoove, verticalMoove, 0);
 
 
