@@ -102,6 +102,7 @@ MonoBehaviour:
   - {fileID: 3464436720269251871, guid: 3a8783d3216433742a87a4bc59d9f90c, type: 3}
   - {fileID: 6900299514439237530, guid: fd40f1a60da6dc94fb300e26a9809d99, type: 3}
   - {fileID: 6314156353561720203, guid: 496e4cc550a26384ea535e6ad876336d, type: 3}
+  ennemiesInScene: []
   enemies:
   - {fileID: 967274091731682327, guid: 849fe973f6154274bbbaa736c4dfdf4d, type: 3}
   - {fileID: 6603300190692841146, guid: df7f7946991f09640921ce5c9d9a87dc, type: 3}
@@ -146,12 +147,12 @@ PrefabInstance:
     - target: {fileID: 6900299514439237530, guid: fd40f1a60da6dc94fb300e26a9809d99,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.1855001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6900299514439237530, guid: fd40f1a60da6dc94fb300e26a9809d99,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6240544
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6900299514439237530, guid: fd40f1a60da6dc94fb300e26a9809d99,
         type: 3}
@@ -213,15 +214,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3090843339192345714}
     m_Modifications:
-    - target: {fileID: 4569703824380087719, guid: 496e4cc550a26384ea535e6ad876336d,
-        type: 3}
-      propertyPath: m_Name
-      value: Waypoint (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6314156353561720203, guid: 496e4cc550a26384ea535e6ad876336d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.49
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 6314156353561720203, guid: 496e4cc550a26384ea535e6ad876336d,
         type: 3}
@@ -273,6 +269,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4569703824380087719, guid: 496e4cc550a26384ea535e6ad876336d,
+        type: 3}
+      propertyPath: m_Name
+      value: Waypoint (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496e4cc550a26384ea535e6ad876336d, type: 3}
 --- !u!4 &2767265288587040477 stripped
@@ -288,20 +289,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3090843339192345714}
     m_Modifications:
-    - target: {fileID: 6403727253255941427, guid: 3a8783d3216433742a87a4bc59d9f90c,
-        type: 3}
-      propertyPath: m_Name
-      value: Waypoint
-      objectReference: {fileID: 0}
     - target: {fileID: 3464436720269251871, guid: 3a8783d3216433742a87a4bc59d9f90c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.88
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3464436720269251871, guid: 3a8783d3216433742a87a4bc59d9f90c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.55
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3464436720269251871, guid: 3a8783d3216433742a87a4bc59d9f90c,
         type: 3}
@@ -347,6 +343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403727253255941427, guid: 3a8783d3216433742a87a4bc59d9f90c,
+        type: 3}
+      propertyPath: m_Name
+      value: Waypoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8783d3216433742a87a4bc59d9f90c, type: 3}

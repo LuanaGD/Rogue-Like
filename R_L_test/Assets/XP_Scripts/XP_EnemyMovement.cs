@@ -10,17 +10,26 @@ public class XP_EnemyMovement : MonoBehaviour
         private Vector2 movement;
         public float moveSpeed = 2f;
         public Vector2 direction;
+        public GameObject[] playerlist;
 
         private bool boxTrigger = false;
 
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            playerlist = GameObject.FindGameObjectsWithTag("Player");
+            player = playerlist[0].transform;
         }
+
+
+
+
+
 
         void Update()
         {
             direction = player.transform.position - transform.position;
+            Debug.Log(direction);
             direction.Normalize();
             movement = direction;
         }
@@ -48,9 +57,9 @@ public class XP_EnemyMovement : MonoBehaviour
                 boxTrigger = false;
                 movement = player.transform.position - transform.position;
             }
-        }
+        } 
 
-    }
+ }
 
 
 

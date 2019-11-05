@@ -18,30 +18,96 @@ public class PlayerManager : MonoBehaviour
     public Rigidbody2D playerRgb;
     public float horizontalMoove;       //these variables exist just to check joystick value with a Debug.Log
     public float verticalMoove;         //look upward
+    public int direction;
+
+    //Statement - Attack System
+
+    public bool isPlayerAttackAvailable;
+    public float attackSpeed;
+    public GameObject[] attackDirectionList;
+    public int attackDirection;
+    
+
+
+
 
     void Start()
     {
+        //Health System
+
         playerHp = playerMaxHp;
+
+        //Moovement System
+
         isPlayerMoovAvailable = true;
+        direction = 0;
+
+        //AttackSystem
+
+        isPlayerAttackAvailable = true;
+
+        for (int i = 0; i < attackDirectionList.Length; i++)
+        {
+            attackDirectionList[i].GetComponent<SpriteRenderer>().enabled = false;
+        }
+        
     }
    
     void FixedUpdate()
     {
 
-        //classic moovement gestion with left joystick: start
+        //Moovement System
+
+        //classic moovement gestion with left joystick
 
         horizontalMoove = Input.GetAxis("Horizontal");
         verticalMoove = Input.GetAxis("Vertical");
         moove = new Vector3(horizontalMoove, verticalMoove, 0);
-
-
 
         if (isPlayerMoovAvailable == true)
         {
             playerRgb.velocity = moove * speed * Time.fixedDeltaTime;
         }
 
-        //classic moovement gestion with left joystick: end
+        if (moove != null)
+        {
+            if (Mathf.Abs(horizontalMoove) > Mathf.Abs(verticalMoove))
+            {
+                if (horizontalMoove > 0)
+                {
+                    direction = 0;      //right
+                }
+                else if (horizontalMoove < 0)
+                {
+                    direction = 1;      //left
+                }
+            }
+            else
+            {
+
+                if (verticalMoove > 0)
+                {
+                    direction = 2;      //up
+                }
+                else if (verticalMoove < 0)
+                {
+                    direction = 3;      //down
+                }
+            }
+        }
+
+        Debug.Log(direction);
+
+        //AttackSystem
+
+        if (Input.GetAxis("Attack") > 0 || Input.GetButtonDown("KeyboardAttack"))
+        {
+            if (isPlayerAttackAvailable == true)
+            {
+                StartCoroutine("PlayerAttack");
+                Debug.Log("Vous attaquer");
+            }   
+        }
 
     }
 
@@ -79,5 +145,72 @@ public class PlayerManager : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
 
     }
+
+    //AttackSystem
+
+    IEnumerator PlayerAttack()
+    {
+
+        attackDirection = direction;
+        isPlayerMoovAvailable = false;
+        GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        isPlayerAttackAvailable = false;
+
+        switch (attackDirection)          //0 = right 1 = left 2 = up 3 = down
+        {
+            case 0:
+                attackDirectionList[0].GetComponent<SpriteRenderer>().enabled = true;
+                break;
+
+            case 1:
+                attackDirectionList[1].GetComponent<SpriteRenderer>().enabled = true;
+                break;
+
+            case 2:
+                attackDirectionList[2].GetComponent<SpriteRenderer>().enabled = true;
+                break;
+
+            case 3:
+                attackDirectionList[3].GetComponent<SpriteRenderer>().enabled = true;
+                break;
+
+            default:
+                attackDirectionList[4].GetComponent<SpriteRenderer>().enabled = true;
+                break;
+
+        }
+
+        yield return new WaitForSeconds(0.3f);
+
+        isPlayerMoovAvailable = true;
+
+        switch (attackDirection)          //0 = right 1 = left 2 = up 3 = down
+        {
+            case 0:
+                attackDirectionList[0].GetComponent<SpriteRenderer>().enabled = false;
+                break;
+
+            case 1:
+                attackDirectionList[1].GetComponent<SpriteRenderer>().enabled = false;
+                break;
+
+            case 2:
+                attackDirectionList[2].GetComponent<SpriteRenderer>().enabled = false;
+                break;
+
+            case 3:
+                attackDirectionList[3].GetComponent<SpriteRenderer>().enabled = false;
+                break;
+
+            default:
+                attackDirectionList[4].GetComponent<SpriteRenderer>().enabled = false;
+                break;
+
+        }
+
+        yield return new WaitForSeconds(attackSpeed);
+        isPlayerAttackAvailable = true;
+    }
+
 }
 
