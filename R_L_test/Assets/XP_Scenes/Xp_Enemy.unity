@@ -184,20 +184,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6000375405814676766, guid: 71e46a648ef1e2c4bbafb8d8481e8565,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6000375405814676764, guid: 71e46a648ef1e2c4bbafb8d8481e8565,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.35
+      value: -6.49
       objectReference: {fileID: 0}
     - target: {fileID: 6000375405814676764, guid: 71e46a648ef1e2c4bbafb8d8481e8565,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.51
       objectReference: {fileID: 0}
     - target: {fileID: 6000375405814676764, guid: 71e46a648ef1e2c4bbafb8d8481e8565,
         type: 3}
@@ -243,6 +238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000375405814676766, guid: 71e46a648ef1e2c4bbafb8d8481e8565,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71e46a648ef1e2c4bbafb8d8481e8565, type: 3}
@@ -412,13 +412,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 473888105}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &1257456243 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 6000375405814676739, guid: 71e46a648ef1e2c4bbafb8d8481e8565,
-    type: 3}
-  m_PrefabInstance: {fileID: 473888105}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1257456246
+--- !u!114 &1257456241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,17 +421,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1257456240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b26471b9a9988245882681d1521116d, type: 3}
+  m_Script: {fileID: 11500000, guid: 458017bee278c204488f415d09a6e0db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMaxHp: 50
-  playerHp: 50
-  isPlayerMoovAvailable: 0
-  speed: 200
-  moove: {x: 0, y: 0, z: 0}
-  playerRgb: {fileID: 1257456243}
-  horizontalMoove: 0
-  verticalMoove: 0
+  dashSpeed: 40
+  startDastTime: 0.0746
 --- !u!1 &1392727649
 GameObject:
   m_ObjectHideFlags: 0
