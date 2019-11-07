@@ -11,20 +11,26 @@ public class NewRoomSpawner : MonoBehaviour
     //4--> Has left Door
 
     private RoomTemplates templates;
+    private RoomTemplates roomTemp;
     private int rand;
     private bool spawned;
+
+    public float waitTime = 4f;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Room").GetComponent<RoomTemplates>();
+        roomTemp = GameObject.FindObjectOfType<List>("")
         Invoke("Spawn", 0.5f);
     }
 
     // Update is called once per frame
     void Spawn()
     {
-        if (spawned == false)
+        if (spawned == false && )
         {
             if (openingDirection == 1)
             {
@@ -68,6 +74,11 @@ public class NewRoomSpawner : MonoBehaviour
             spawned = true;
 
             Destroy(gameObject);
+        }
+        else if (collision.CompareTag("StartSpawn"))
+        {
+            Destroy(gameObject);
+            spawned = true;
         }
     }
 }

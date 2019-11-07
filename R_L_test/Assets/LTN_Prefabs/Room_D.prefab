@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 5108237701618329640}
   - component: {fileID: 6041504698795742298}
   - component: {fileID: 4053229279956782620}
+  - component: {fileID: 3480215919458462978}
   m_Layer: 8
   m_Name: RoomSpwan
   m_TagString: SpawnRoomPoint
@@ -259,6 +260,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3480215919458462978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3667528802525038356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5dfbb2ada397f44b805e250bfb391b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4245751035138420245
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 2
+  waitTime: 4
 --- !u!1 &8657862302383143420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,6 +1352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8657862303476987199}
+  - component: {fileID: -4714830280807874988}
   m_Layer: 8
   m_Name: Room_D
   m_TagString: Untagged
@@ -1394,6 +1409,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4714830280807874988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8657862303476987196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b8094961e2f924a95fd46c862b2a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  templates: {fileID: 0}
 --- !u!1 &8657862303502073526
 GameObject:
   m_ObjectHideFlags: 0
