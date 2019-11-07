@@ -26,13 +26,21 @@ public class PlayerManager : MonoBehaviour
     public float attackSpeed;
     public GameObject[] attackDirectionList;
     public int attackDirection;
-    
 
+    //Dash
+    public bool isDashing;
+    public float dashSpeed = 3f;
+    public float dashTime;
+    public float initialDashTime = 1f;
+    public float dashCooldown;
+    public float initialDashCooldown = 3f;
+    public AnimationCurve dashCurve;
 
 
 
     void Start()
     {
+        playerRgb.GetComponent<Rigidbody2D>();
         //Health System
 
         playerHp = playerMaxHp;
@@ -50,8 +58,12 @@ public class PlayerManager : MonoBehaviour
         {
             attackDirectionList[i].GetComponent<SpriteRenderer>().enabled = false;
         }
-        
-    }
+
+        //Dash System
+
+        isDashing = true;
+
+}
    
     void FixedUpdate()
     {
@@ -64,6 +76,10 @@ public class PlayerManager : MonoBehaviour
         verticalMoove = Input.GetAxis("Vertical");
         
         moove = new Vector3(horizontalMoove, verticalMoove, 0);
+        if (Input.GetKeyDown(KeyCode.Y) && isDashing == true)
+        {
+            StartCoroutine(SmoothDash(moove));
+        }
 
         if (isPlayerMoovAvailable == true)
         {
@@ -97,7 +113,7 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
-        Debug.Log(direction);
+        //Debug.Log(direction);
 
         //AttackSystem
 
@@ -213,5 +229,34 @@ public class PlayerManager : MonoBehaviour
         isPlayerAttackAvailable = true;
     }
 
+
+    IEnumerator SmoothDash(Vector3 direction)
+    {
+        Debug.Log("on entre dans la coroutine");
+        float timer = 0.0f;
+        isDashing = false;
+        isPlayerMoovAvailable = false;
+
+        while (timer < dashTime)
+        {
+            Debug.Log("on entre dans le while");
+            Debug.Log(playerRgb.velocity);
+            playerRgb.velocity = direction.normalized * dashSpeed * dashCurve.Evaluate(timer / dashTime);
+            Debug.Log(playerRgb.velocity);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        Debug.Log("on sort du while");
+
+        playerRgb.velocity = Vector3.zero;
+
+
+        yield return new WaitForSeconds(dashCooldown);
+        isDashing = true;
+        isPlayerMoovAvailable = true;
+        Debug.Log("On est à la fin de la coroutine");
+
+    }
 }
 

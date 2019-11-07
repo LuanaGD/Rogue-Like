@@ -4,71 +4,80 @@ using UnityEngine;
 
 public class XP_Dash : MonoBehaviour
 {
+    //Statement Start
 
-    private Rigidbody2D rb;
-    public float dashSpeed;
-    private float dashTime;
-    public float startDastTime;
-    private int direction;
+    //Variable about Dash
 
-    //End Statement.
+    
 
-    // Start is called before the first frame update
-    void Start()
+
+    //Direction
+    //Statement End
+
+
+    
+   
+
+    /*private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        dashTime = startDastTime;
+        dashCooldown = initialDashCooldown;
+        dashTime = initialDashTime;
+        playerRgb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(direction == 0)
+       
+    Dash();
+      
+    }
+    private void Dash()
+    {
+        horizontalMoove = Input.GetAxis("Horizontal");
+        verticalMoove = Input.GetAxis("Vertical");
+        
+
+        if(isDashing == false)
         {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-                direction = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-                direction = 2;
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-                direction = 3;
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-                direction = 4;
-        }
-        }
-            else{
-            if(dashTime <= 0)
+            if (dashCooldown <=0)
             {
-                direction = 0;
-                dashTime = startDastTime;
-                rb.velocity = Vector2.zero;
+               
+                if (Input.GetKeyDown(KeyCode.Space) && (playerRgb.velocity.x != 0 || playerRgb.velocity.y != 0))
+                {
+                    isDashing = true;
+                }
+
             }
             else
             {
-                dashTime -= Time.deltaTime;
 
-                if(direction == 1)
+                dashCooldown -= Time.fixedDeltaTime;
+                if(dashCooldown <= 0)
                 {
-                    rb.velocity = Vector2.left * dashSpeed;
-                } else if(direction == 2)
-                {
-                    rb.velocity = Vector2.right * dashSpeed;
+                    dashCooldown = 0;
                 }
-                else if (direction == 3)
-                {
-                    rb.velocity = Vector2.up * dashSpeed;
-                }
-                else if (direction == 4)
-                {
-                    rb.velocity = Vector2.down * dashSpeed;
-                }
+
             }
+        }
+        else
+        {
+            if(dashTime <= 0)
+            {
+
+                isDashing = false;
+                dashTime = initialDashTime;
+                dashCooldown = initialDashCooldown;
+                playerRgb.velocity = Vector2.zero;
+
             }
-    }
+            else
+            {
+
+                dashTime -= Time.deltaTime;
+                playerRgb.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * dashSpeed;
+
+            }
+                   
+        }
+    }*/
 }
