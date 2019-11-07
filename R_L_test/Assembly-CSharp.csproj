@@ -62,25 +62,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LTN_Scripts\ItemManager.cs" />
-    <Compile Include="Assets\LTN_Scripts\ItemType.cs" />
-    <Compile Include="Assets\LTN_Scripts\LvlGeneration.cs" />
-    <Compile Include="Assets\LTN_Scripts\RoomType.cs" />
-    <Compile Include="Assets\LTN_Scripts\SpawnRoom.cs" />
-    <Compile Include="Assets\LTN_Scripts\SpawnTile.cs" />
-    <Compile Include="Assets\LTN_Scripts\WeaponManager.cs" />
-    <Compile Include="Assets\RES_Scrpit\HealTestHealth.cs" />
-    <Compile Include="Assets\RES_Scrpit\PlayerManager.cs" />
-    <Compile Include="Assets\RES_Scrpit\TrapTestHealth.cs" />
-    <Compile Include="Assets\XP_Scripts\RES_EnemyMoovement.cs" />
-    <Compile Include="Assets\XP_Scripts\SceneClear.cs" />
-    <Compile Include="Assets\XP_Scripts\XP_Dash.cs" />
-    <Compile Include="Assets\XP_Scripts\Xp_EnemyHealthCount.cs" />
-    <Compile Include="Assets\XP_Scripts\XP_EnemyMovement.cs" />
-    <Compile Include="Assets\XP_Scripts\XP_PicsTrap.cs" />
-    <Compile Include="Assets\XP_Scripts\XP_PlayerMovement.cs" />
-    <Compile Include="Assets\XP_Scripts\XP_SpawnerZone.cs" />
-    <Compile Include="Assets\XP_Scripts\XP_TrapDamage.cs" />
+    <Compile Include="Assets\Cleaning v1\Clean1_Scripts\PlayerAttack.cs" />
+    <Compile Include="Assets\Cleaning v1\Clean1_Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Cleaning v1\Clean1_Scripts\PlayerMoovement.cs" />
+    <Compile Include="Assets\Cleaning v1\Clean1_Scripts\PlayerSource.cs" />
+    <Compile Include="Assets\LTN\LTN_Scripts\ItemManager.cs" />
+    <Compile Include="Assets\LTN\LTN_Scripts\ItemType.cs" />
+    <Compile Include="Assets\LTN\LTN_Scripts\LvlGeneration.cs" />
+    <Compile Include="Assets\LTN\LTN_Scripts\RoomType.cs" />
+    <Compile Include="Assets\LTN\LTN_Scripts\SpawnRoom.cs" />
+    <Compile Include="Assets\LTN\LTN_Scripts\SpawnTile.cs" />
+    <Compile Include="Assets\LTN\LTN_Scripts\WeaponManager.cs" />
+    <Compile Include="Assets\RES\RES_Scrpit\HealTestHealth.cs" />
+    <Compile Include="Assets\RES\RES_Scrpit\PlayerManager.cs" />
+    <Compile Include="Assets\RES\RES_Scrpit\TrapTestHealth.cs" />
+    <Compile Include="Assets\XP\XP_Scripts\RES_EnemyMoovement.cs" />
+    <Compile Include="Assets\XP\XP_Scripts\SceneClear.cs" />
+    <Compile Include="Assets\XP\XP_Scripts\XP_Dash.cs" />
+    <Compile Include="Assets\XP\XP_Scripts\Xp_EnemyHealthCount.cs" />
+    <Compile Include="Assets\XP\XP_Scripts\XP_EnemyMovement.cs" />
+    <Compile Include="Assets\XP\XP_Scripts\XP_PicsTrap.cs" />
+    <Compile Include="Assets\XP\XP_Scripts\XP_PlayerMovement.cs" />
+    <Compile Include="Assets\XP\XP_Scripts\XP_SpawnerZone.cs" />
+    <Compile Include="Assets\XP\XP_Scripts\XP_TrapDamage.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/r.secher.ETU/Documents/RogueLike Unity/Rogue-Like/R_L_test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
