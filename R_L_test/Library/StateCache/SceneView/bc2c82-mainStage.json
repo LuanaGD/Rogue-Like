@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":false,"showMaterialUpdate":false,"showSkybox":false,"showFlares":false,"showImageEffects":false,"showParticleSystems":false},"in2DMode":true,"pivot":{"x":-0.007305160164833069,"y":-1.4899402856826783,"z":-5.255666255950928},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":16.749357223510743,"orthographic":true}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":false,"showMaterialUpdate":false,"showSkybox":false,"showFlares":false,"showImageEffects":false,"showParticleSystems":false},"in2DMode":true,"pivot":{"x":2.551504611968994,"y":-2.690295696258545,"z":-4.312076091766357},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":8.637210845947266,"orthographic":true}
 >>>>>>> Stashed changes
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":false,"showMaterialUpdate":false,"showSkybox":false,"showFlares":false,"showImageEffects":false,"showParticleSystems":false},"in2DMode":true,"pivot":{"x":-1.3122193813323975,"y":-0.06691762059926987,"z":-15.56386947631836},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":11.631412506103516,"orthographic":true}
+>>>>>>> XP_Trap
