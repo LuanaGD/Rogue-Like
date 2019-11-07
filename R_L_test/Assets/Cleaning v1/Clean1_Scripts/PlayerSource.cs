@@ -6,36 +6,35 @@ public abstract class PlayerSource : MonoBehaviour
 {
     //Statement - Health System Gestion
 
-    public float maxHp;
-    public float currentHp;
+    protected static float maxHp;
+    protected static float currentHp;
 
     //Statement - Moovement System
 
-    public bool isPlayerMoovAvailable;
-    public float speed;
-    public Vector3 moove;
-    public Rigidbody2D playerRgb;
-    public float horizontalMoove;       //these variables exist just to check joystick value with a Debug.Log
-    public float verticalMoove;         //look upward
-    public int direction;
+    protected static bool isPlayerMoovAvailable;
+    protected static float speed;
+    protected static Vector3 moove;
+    protected static Rigidbody2D playerRgb;
+    protected static int direction;
 
     //Statement - Attack System
 
-    public bool isPlayerAttackAvailable;
-    public float attackSpeed;
-    public GameObject[] attackDirectionList;
-    public int attackDirection;
+    protected bool isPlayerAttackAvailable;
+    protected float attackSpeed;
+    protected GameObject[] attackDirectionList;
+    protected int attackDirection;
 
     //Dash
-    public bool isPlayerDashAvailable;
-    public float dashSpeed = 3f;
-    public float dashTime;
-    public float initialDashTime = 1f;
-    public float dashCooldown;
-    public float initialDashCooldown = 3f;
-    public AnimationCurve dashCurve;
+    protected bool isPlayerDashAvailable;
+    protected float dashSpeed = 3f;
+    protected float dashTime;
+    protected float initialDashTime = 1f;
+    protected float dashCooldown;
+    protected float initialDashCooldown = 3f;
+    protected AnimationCurve dashCurve;
 
-    private void Start()
+    public virtual void Start()
     {
+        playerRgb = GetComponent<Rigidbody2D>();
     }
 }

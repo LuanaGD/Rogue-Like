@@ -275,5 +275,11 @@ PrefabInstance:
       propertyPath: speed
       value: 250
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3216610325124943742, guid: 6eca4164f4227f3428cb584dbfa82c4e,
+        type: 3}
+      propertyPath: playerRgb
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1145999376463426744, guid: 6eca4164f4227f3428cb584dbfa82c4e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6eca4164f4227f3428cb584dbfa82c4e, type: 3}

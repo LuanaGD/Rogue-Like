@@ -441,8 +441,6 @@ GameObject:
   - component: {fileID: 2130268433948415688}
   - component: {fileID: 7525590254236974559}
   - component: {fileID: 3216610325124943742}
-  - component: {fileID: 1852884196526025298}
-  - component: {fileID: 1145999376463426744}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -568,96 +566,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   currentHp: 0
-  isPlayerMoovAvailable: 0
   speed: 250
-  moove: {x: 0, y: 0, z: 0}
   playerRgb: {fileID: 2130268433948415688}
-  horizontalMoove: 0
-  verticalMoove: 0
-  direction: 0
-  isPlayerAttackAvailable: 0
   attackSpeed: 0
   attackDirectionList: []
   attackDirection: 0
-  isPlayerDashAvailable: 0
-  dashSpeed: 3
-  dashTime: 0
-  initialDashTime: 1
-  dashCooldown: 0
-  initialDashCooldown: 3
-  dashCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1852884196526025298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7226082487293605207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0154f4f0d60f49e49a3236cf0b5014f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 0
-  currentHp: 0
-  isPlayerMoovAvailable: 0
-  speed: 0
-  moove: {x: 0, y: 0, z: 0}
-  playerRgb: {fileID: 2130268433948415688}
-  horizontalMoove: 0
-  verticalMoove: 0
-  direction: 0
-  isPlayerAttackAvailable: 0
-  attackSpeed: 0
-  attackDirectionList: []
-  attackDirection: 0
-  isPlayerDashAvailable: 0
-  dashSpeed: 3
-  dashTime: 0
-  initialDashTime: 1
-  dashCooldown: 0
-  initialDashCooldown: 3
-  dashCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1145999376463426744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7226082487293605207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe2b0b1b9bcdee4292b00e8f85a5709, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 0
-  currentHp: 0
-  isPlayerMoovAvailable: 0
-  speed: 0
-  moove: {x: 0, y: 0, z: 0}
-  playerRgb: {fileID: 2130268433948415688}
-  horizontalMoove: 0
-  verticalMoove: 0
-  direction: 0
-  isPlayerAttackAvailable: 0
-  attackSpeed: 0
-  attackDirectionList:
-  - {fileID: 707638920974407221}
-  - {fileID: 516836850977574940}
-  - {fileID: 1222580304859804557}
-  - {fileID: 6181496510530009862}
-  attackDirection: 0
-  isPlayerDashAvailable: 0
   dashSpeed: 3
   dashTime: 0
   initialDashTime: 1

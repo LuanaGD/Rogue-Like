@@ -33,7 +33,7 @@ public class PlayerAttack : PlayerSource
     IEnumerator StartPlayerAttack()
     {
 
-        attackDirection = direction;
+        attackDirection = PlayerSource.direction;
         isPlayerMoovAvailable = false;
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         isPlayerAttackAvailable = false;

@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerMoovement : PlayerSource
 {
+        
+    protected float horizontalMoove;                                            //these variables exist just to check joystick value with a Debug.Log
+    protected float verticalMoove;                                              //look upward
     
-    void Start()
+    public override void Start()
     {
-        playerRgb.GetComponent<Rigidbody2D>();
+        base.Start();
+        
 
         //Moovement System
 
         isPlayerMoovAvailable = true;
-        direction = 0;
+        PlayerSource.direction = 0;
 
         //Dash System
 
@@ -42,11 +46,11 @@ public class PlayerMoovement : PlayerSource
             {
                 if (horizontalMoove > 0)
                 {
-                    direction = 0;      //right
+                    PlayerSource.direction = 0;      //right
                 }
                 else if (horizontalMoove < 0)
                 {
-                    direction = 1;      //left
+                    PlayerSource.direction = 1;      //left
                 }
             }
             else
@@ -54,16 +58,16 @@ public class PlayerMoovement : PlayerSource
 
                 if (verticalMoove > 0)
                 {
-                    direction = 2;      //up
+                    PlayerSource.direction = 2;      //up
                 }
                 else if (verticalMoove < 0)
                 {
-                    direction = 3;      //down
+                    PlayerSource.direction = 3;      //down
                 }
             }
         }
 
-       Debug.Log(direction);
+       Debug.Log(PlayerSource.direction);
     }
 
     IEnumerator SmoothDash(Vector3 direction)
