@@ -11,7 +11,6 @@ public class NewRoomSpawner : MonoBehaviour
     //4--> Has left Door
 
     private RoomTemplates templates;
-    private RoomTemplates roomTemp;
     private int rand;
     private bool spawned;
 
@@ -86,19 +85,78 @@ public class NewRoomSpawner : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("SpawnRoomPoint"))
         {
             if(collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false)
             {
+                /*if(openingDirection == 1 && openingDirection == 2)
+                {
+                    Instantiate(templates.twoOpenings[3], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                else if(openingDirection == 1 && openingDirection == 3)
+                {
+                    Instantiate(templates.twoOpenings[4], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+
+                else if(openingDirection == 1 && openingDirection == 4)
+                {
+                    Instantiate(templates.twoOpenings[2], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+
+                else if(openingDirection == 2 && openingDirection == 3)
+                {
+                    Instantiate(templates.twoOpenings[5], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+
+                else if(openingDirection == 2 && openingDirection == 4)
+                {
+                    Instantiate(templates.twoOpenings[1], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                else if(openingDirection == 3 && openingDirection == 4)
+                {
+                    Instantiate(templates.twoOpenings[0], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                else if(openingDirection == 1 && openingDirection == 2 && openingDirection == 3)
+                {
+                    Instantiate(templates.threeOpenings[3], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                else if (openingDirection == 1 && openingDirection == 2 && openingDirection == 4)
+                {
+                    Instantiate(templates.threeOpenings[2], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                else if (openingDirection == 1 && openingDirection == 3 && openingDirection == 4)
+                {
+                    Instantiate(templates.threeOpenings[0], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                else if (openingDirection == 2 && openingDirection == 3 && openingDirection == 4)
+                {
+                    Instantiate(templates.threeOpenings[1], transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }*/
+
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Destroy(gameObject);
-            }
 
+            }
             spawned = true;
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else if (collision.CompareTag("StartSpawn"))
         {
