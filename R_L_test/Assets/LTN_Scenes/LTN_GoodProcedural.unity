@@ -733,11 +733,14 @@ MonoBehaviour:
   - {fileID: 1216570534923723620, guid: c386a65c1227afb409f48a6dbd982e81, type: 3}
   - {fileID: 3221518479852131878, guid: 8a0d6350ab274b74fa85d349c885ae02, type: 3}
   - {fileID: 8490930182677378042, guid: 71549c280f9d39b4eb0d2666f49aede9, type: 3}
-  threeOpeningsRoom:
-  - {fileID: 8824987497509964954, guid: b6f0a95814666b9419b6b7d4fa6281a8, type: 3}
-  - {fileID: 4993511268189323266, guid: 2e05019403880154eab062b3424f7b12, type: 3}
-  - {fileID: 7860440158000125248, guid: a8cc29ccc53242f4cb7bb76add8aeb75, type: 3}
-  - {fileID: 680099984053993664, guid: 7fe432e14be130a478f22990807b4210, type: 3}
+  leftClosing: {fileID: 4811104017880769048, guid: 8ceb6170869cd2c4cb54d79443909537,
+    type: 3}
+  rightClosing: {fileID: 7911036452248244488, guid: dcd12d44b5cfd6f43b7580d532b7a003,
+    type: 3}
+  upClosing: {fileID: 8395821245925222894, guid: ccc5cebff908a4c4bae4db8d93befd50,
+    type: 3}
+  downClosing: {fileID: 8657862303476987196, guid: ee7e66f611472bc4987d17a6d9c3c89a,
+    type: 3}
   closedRoom: {fileID: 2648929447811023017, guid: a4d1c301df8957542a85b6af56a59610,
     type: 3}
   rooms: []

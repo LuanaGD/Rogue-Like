@@ -23,14 +23,13 @@ public class NewRoomSpawner : MonoBehaviour
     {
         Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Room").GetComponent<RoomTemplates>();
-        roomTemp = GameObject.FindObjectOfType<List>("")
         Invoke("Spawn", 0.5f);
     }
 
     // Update is called once per frame
     void Spawn()
     {
-        if (spawned == false && )
+        if (spawned == false && templates.rooms.Count <= 10)
         {
             if (openingDirection == 1)
             {
@@ -55,6 +54,32 @@ public class NewRoomSpawner : MonoBehaviour
                 //need LEFT door
                 rand = Random.Range(0, templates.rightRooms.Length);
                 Instantiate(templates.leftRooms[rand], transform.position, Quaternion.identity);
+            }
+
+            spawned = true;
+        }
+
+        else if(spawned == false && templates.rooms.Count >= 10)
+        {
+            if (openingDirection == 1)
+            {
+                //need DOWN room
+                Instantiate(templates.downClosing, transform.position, Quaternion.identity);
+            }
+            if (openingDirection == 2)
+            {
+                //need UP room
+                Instantiate(templates.upClosing, transform.position, Quaternion.identity);
+            }
+            if (openingDirection == 3)
+            {
+                //need RIGHT room
+                Instantiate(templates.rightClosing, transform.position, Quaternion.identity);
+            }
+            if (openingDirection == 4)
+            {
+                //need LEFT room
+                Instantiate(templates.leftClosing, transform.position, Quaternion.identity);
             }
 
             spawned = true;
