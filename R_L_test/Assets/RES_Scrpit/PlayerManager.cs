@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -36,6 +37,9 @@ public class PlayerManager : MonoBehaviour
     public float initialDashCooldown = 3f;
     public AnimationCurve dashCurve;
 
+    //heal
+    public Image healthBar;
+
 
 
     void Start()
@@ -63,7 +67,9 @@ public class PlayerManager : MonoBehaviour
 
         isDashing = true;
 
-}
+       
+
+    }
    
     void FixedUpdate()
     {
@@ -76,9 +82,12 @@ public class PlayerManager : MonoBehaviour
         verticalMoove = Input.GetAxis("Vertical");
         
         moove = new Vector3(horizontalMoove, verticalMoove, 0);
-        if (Input.GetKeyDown(KeyCode.Y) && isDashing == true)
+        if (Input.GetAxis("Dash") > 0 && isDashing == true)
         {
+            isPlayerAttackAvailable = false;
             StartCoroutine(SmoothDash(moove));
+            isPlayerAttackAvailable = true;
+
         }
 
         if (isPlayerMoovAvailable == true)
@@ -117,7 +126,7 @@ public class PlayerManager : MonoBehaviour
 
         //AttackSystem
 
-        if (Input.GetAxis("Attack") > 0 || Input.GetButtonDown("KeyboardAttack"))
+        if (Input.GetAxis("Attack") > 0 && isDashing == false)
         {
             if (isPlayerAttackAvailable == true)
             {
@@ -125,6 +134,9 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("Vous attaquer");
             }   
         }
+
+        //Healbar Update
+        healthBar.fillAmount = playerHp / playerMaxHp;
 
     }
 
@@ -135,11 +147,13 @@ public class PlayerManager : MonoBehaviour
         playerHp -= dmgTaken;
         Debug.Log("Vous prennez " + dmgTaken + " dégats");
         Debug.Log("Vous avez " + playerHp + " points de vie");
+        
 
         if (playerHp <= 0)
         {
             PlayerDeath();
         }
+        healthBar.fillAmount = playerHp / playerMaxHp;
     }
 
     public void PlayerIsHealing(float heal)             //Put every action requiered when the player is healed  
@@ -153,6 +167,8 @@ public class PlayerManager : MonoBehaviour
 
         Debug.Log("Vous récupérez " + heal + " points de vie");
         Debug.Log("Vous avez " + playerHp + " points de vie");
+
+        healthBar.fillAmount = playerHp / playerMaxHp;
     }
 
     void PlayerDeath()                                  //Put every action requiered when the player is dead on this function
@@ -232,6 +248,8 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator SmoothDash(Vector3 direction)
     {
+        isPlayerAttackAvailable = false;
+
         Debug.Log("on entre dans la coroutine");
         float timer = 0.0f;
         isDashing = false;
@@ -252,10 +270,13 @@ public class PlayerManager : MonoBehaviour
         playerRgb.velocity = Vector3.zero;
 
 
-        yield return new WaitForSeconds(dashCooldown);
+        new WaitForSeconds(dashCooldown);
         isDashing = true;
         isPlayerMoovAvailable = true;
         Debug.Log("On est à la fin de la coroutine");
+        yield return new WaitForSeconds(2f);
+        
+       
 
     }
 }

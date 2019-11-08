@@ -78,6 +78,7 @@
     <Compile Include="Assets\XP_Scripts\Xp_EnemyHealthCount.cs" />
     <Compile Include="Assets\XP_Scripts\XP_EnemyMovement.cs" />
     <Compile Include="Assets\XP_Scripts\XP_PicsTrap.cs" />
+    <Compile Include="Assets\XP_Scripts\XP_PlayerHealthBar.cs" />
     <Compile Include="Assets\XP_Scripts\XP_PlayerMovement.cs" />
     <Compile Include="Assets\XP_Scripts\XP_SpawnerZone.cs" />
     <Compile Include="Assets\XP_Scripts\XP_TrapDamage.cs" />
