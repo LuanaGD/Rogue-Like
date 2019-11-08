@@ -2,42 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : PlayerSource
+public class PlayerAttack : MonoBehaviour
 {
-    
+    //Statement
+
+    public bool isPlayerAttackAvailable;
+    public float attackSpeed;
+    public GameObject[] attackDirectionList;
+    public int attackDirection;
+
     void Start()
     {
         isPlayerAttackAvailable = true;
-        playerRgb.GetComponent<Rigidbody2D>();
+
+        attackDirectionList = new GameObject[4];
+        attackDirectionList = GameObject.FindGameObjectsWithTag("AttackDirection");
 
         for (int i = 0; i < attackDirectionList.Length; i++)
         {
             attackDirectionList[i].GetComponent<SpriteRenderer>().enabled = false;
         }
-
     }
 
-    
-    void FixedUpdate()
+  
+    void Update()
     {
-        if (Input.GetAxis("Attack") > 0 || Input.GetButtonDown("KeyboardAttack"))
-        {
-            if (isPlayerAttackAvailable == true)
-            {
-                StartCoroutine("StartPlayerAttack");
-                Debug.Log("Vous attaquer");
-            }
+        if (Input.GetAxis("Attack") > 0 || Input.GetButtonDown("KeyboardAttack") && isPlayerAttackAvailable == true)
+        {           
+           StartCoroutine("LaunchPlayerAttack");           
         }
     }
 
-    IEnumerator StartPlayerAttack()
+    IEnumerator LaunchPlayerAttack()
     {
 
-        attackDirection = PlayerSource.direction;
-        isPlayerMoovAvailable = false;
+        attackDirection = GetComponent<PlayerMovement>().playerDirection;
+        GetComponent<PlayerMovement>().isPlayerMoovAvailable = false;
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         isPlayerAttackAvailable = false;
-        Debug.Log(attackDirection);
 
         switch (attackDirection)          //0 = right 1 = left 2 = up 3 = down
         {
@@ -65,7 +67,7 @@ public class PlayerAttack : PlayerSource
 
         yield return new WaitForSeconds(0.3f);
 
-        isPlayerMoovAvailable = true;
+        GetComponent<PlayerMovement>().isPlayerMoovAvailable = true;
 
         switch (attackDirection)          //0 = right 1 = left 2 = up 3 = down
         {
@@ -91,8 +93,7 @@ public class PlayerAttack : PlayerSource
 
         }
 
-        yield return new WaitForSeconds(attackSpeed);
+        yield return new WaitForSeconds(10f);
         isPlayerAttackAvailable = true;
     }
-
 }
