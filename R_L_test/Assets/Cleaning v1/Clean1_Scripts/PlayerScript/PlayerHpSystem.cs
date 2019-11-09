@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHpSystem : MonoBehaviour
 {
@@ -8,17 +9,23 @@ public class PlayerHpSystem : MonoBehaviour
 
     public float playerMaxHp;
     public float playerHp;
+    public Image healthBar;
+
+
 
     void Start()
     {
         playerHp = playerMaxHp;
     }
 
+    private void Update()
+    {
+        healthBar.fillAmount = playerHp / playerMaxHp;
+    }
+
     public void PlayerIsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
     {
         playerHp -= damageValue;
-        Debug.Log("Vous prennez " + damageValue + " dégats");
-        Debug.Log("Vous avez " + playerHp + " points de vie");
 
         if (playerHp <= 0)
         {
@@ -35,8 +42,6 @@ public class PlayerHpSystem : MonoBehaviour
             playerHp = playerMaxHp;
         }
 
-        Debug.Log("Vous récupérez " + healValue + " points de vie");
-        Debug.Log("Vous avez " + playerHp + " points de vie");
     }
 
     void PlayerDeath()                                  //Put every action requiered when the player is dead on this function
