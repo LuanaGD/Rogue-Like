@@ -34,7 +34,7 @@ public class Xp_EnemyHealthCount : MonoBehaviour
         healthBar.fillAmount =  health / startHealth;
     }
 
-    void DealDamage (float damageValue)
+    public void DealDamage (float damageValue)
     {
         // Deduct the damage dealt from the character's health
         health -= damageValue;
