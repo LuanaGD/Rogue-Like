@@ -42,7 +42,5 @@ public class RES_EnemyMoovement : MonoBehaviour
             ennemyRgb.velocity = moove * speed * Time.fixedDeltaTime;
         }
 
-     
-
     }
 }
