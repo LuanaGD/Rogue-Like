@@ -104,6 +104,5 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(attackSpeed);
 
         isPlayerAttackAvailable = true;
-        Debug.Log(PlayerAttack.isPlayerAttackAvailable);
     }
 }

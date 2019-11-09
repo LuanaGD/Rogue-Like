@@ -11,7 +11,6 @@ public class AttackZoneSystem : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Enemy in Range");
             enemyInRangList.Add(collision.gameObject);
         }
     }
@@ -20,16 +19,15 @@ public class AttackZoneSystem : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Enemy out Range");
             enemyInRangList.Remove(collision.gameObject);
         }
     }
 
-    public void DealDamageToEnemy(float Damaged)
+    public void DealDamageToEnemy(float damage)
     {
         for (int i = 0; i < enemyInRangList.Count; i++)
         {
-            enemyInRangList[i].GetComponent<Xp_EnemyHealthCount>().DealDamage(Damaged);
+            enemyInRangList[i].GetComponent<EnemyHealthSystem>().EnemyIsTakingDamage(damage);
         }
     }
 }

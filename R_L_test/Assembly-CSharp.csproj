@@ -63,6 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Cleaning v1\Clean1_Scripts\EnemyScript\EnemyAttack.cs" />
+    <Compile Include="Assets\Cleaning v1\Clean1_Scripts\EnemyScript\EnemyAttackZoneSystem.cs" />
+    <Compile Include="Assets\Cleaning v1\Clean1_Scripts\EnemyScript\EnemyBasicMovement.cs" />
+    <Compile Include="Assets\Cleaning v1\Clean1_Scripts\EnemyScript\EnemyHealthSystem.cs" />
     <Compile Include="Assets\Cleaning v1\Clean1_Scripts\PlayerScript\AttackZoneSystem.cs" />
     <Compile Include="Assets\Cleaning v1\Clean1_Scripts\PlayerScript\PlayerAttack.cs" />
     <Compile Include="Assets\Cleaning v1\Clean1_Scripts\PlayerScript\PlayerHpSystem.cs" />

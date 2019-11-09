@@ -14,10 +14,10 @@ public class PlayerHpSystem : MonoBehaviour
         playerHp = playerMaxHp;
     }
 
-    public void PlayerIsTakingDmg(float dmgTaken)       //Put every action requiered when the player is taking dmg on this fonction
+    public void PlayerIsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
     {
-        playerHp -= dmgTaken;
-        Debug.Log("Vous prennez " + dmgTaken + " dégats");
+        playerHp -= damageValue;
+        Debug.Log("Vous prennez " + damageValue + " dégats");
         Debug.Log("Vous avez " + playerHp + " points de vie");
 
         if (playerHp <= 0)
@@ -26,16 +26,16 @@ public class PlayerHpSystem : MonoBehaviour
         }
     }
 
-    public void PlayerIsHealing(float heal)             //Put every action requiered when the player is healed on this fonction  
+    public void PlayerIsHealing(float healValue)             //Put every action requiered when the player is healed on this fonction  
     {
-        playerHp += heal;
+        playerHp += healValue;
 
         if (playerHp > playerMaxHp)
         {
             playerHp = playerMaxHp;
         }
 
-        Debug.Log("Vous récupérez " + heal + " points de vie");
+        Debug.Log("Vous récupérez " + healValue + " points de vie");
         Debug.Log("Vous avez " + playerHp + " points de vie");
     }
 
