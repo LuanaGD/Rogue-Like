@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ennemie
   - AttackDirection
+  - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX

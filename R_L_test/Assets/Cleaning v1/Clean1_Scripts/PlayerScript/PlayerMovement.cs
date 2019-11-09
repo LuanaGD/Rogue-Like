@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Move
 
-    public bool isPlayerMoovAvailable;
+    public static bool isPlayerMoovAvailable;
     public float speed;
     public Vector3 move;  
     public float inputHorizontalMoove;       
@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     //Dash
 
-    public bool isPlayerDashAvailable;
+    public static bool isPlayerDashAvailable;
+    public static bool isPlayerDashing;
     public float dashSpeed;
     public float dashTime;
     public float dashCooldown;
@@ -38,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
 
         playerDirection = 0;
         lastMove = new Vector3(1,0,0);
+
+        isPlayerDashing = false;
     }
 
     
@@ -73,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isPlayerMoovAvailable == true)
         {
-            playerRgb.velocity = move * speed * Time.fixedDeltaTime;
+            playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;
         }
     }
 
@@ -119,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
         float timer = 0.0f;
         isPlayerDashAvailable = false;
         isPlayerMoovAvailable = false;
+        isPlayerDashing = true;
 
         while (timer < dashTime)
         {
@@ -130,6 +134,8 @@ public class PlayerMovement : MonoBehaviour
         playerRgb.velocity = Vector3.zero;
 
         isPlayerMoovAvailable = true;
+        isPlayerDashing = false;
+
         yield return new WaitForSeconds(dashCooldown);
         isPlayerDashAvailable = true;
         

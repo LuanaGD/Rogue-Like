@@ -6,10 +6,12 @@ public class PlayerAttack : MonoBehaviour
 {
     //Statement
 
-    public bool isPlayerAttackAvailable;
+    public static bool isPlayerAttackAvailable;
     public float attackSpeed;
     public GameObject[] attackDirectionList;
     public int attackDirection;
+    public float playerDamage;
+    
 
     void Start()
     {
@@ -27,9 +29,12 @@ public class PlayerAttack : MonoBehaviour
   
     void Update()
     {
-        if (Input.GetAxis("Attack") > 0 || Input.GetButtonDown("KeyboardAttack") && isPlayerAttackAvailable == true)
+        if (Input.GetAxis("Attack") > 0 || Input.GetButtonDown("KeyboardAttack"))
         {           
-           StartCoroutine("LaunchPlayerAttack");           
+            if (isPlayerAttackAvailable == true && PlayerMovement.isPlayerDashing == false)
+            {
+                StartCoroutine("LaunchPlayerAttack");
+            }                  
         }
     }
 
@@ -37,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
     {
 
         attackDirection = GetComponent<PlayerMovement>().playerDirection;
-        GetComponent<PlayerMovement>().isPlayerMoovAvailable = false;
+        PlayerMovement.isPlayerMoovAvailable = false;
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         isPlayerAttackAvailable = false;
 
@@ -45,31 +50,33 @@ public class PlayerAttack : MonoBehaviour
         {
             case 0:
                 attackDirectionList[0].GetComponent<SpriteRenderer>().enabled = true;
+                attackDirectionList[0].GetComponent<AttackZoneSystem>().DealDamageToEnemy(playerDamage);
+
                 break;
 
             case 1:
                 attackDirectionList[1].GetComponent<SpriteRenderer>().enabled = true;
+                attackDirectionList[1].GetComponent<AttackZoneSystem>().DealDamageToEnemy(playerDamage);
                 break;
 
             case 2:
                 attackDirectionList[2].GetComponent<SpriteRenderer>().enabled = true;
+                attackDirectionList[2].GetComponent<AttackZoneSystem>().DealDamageToEnemy(playerDamage);
                 break;
 
             case 3:
                 attackDirectionList[3].GetComponent<SpriteRenderer>().enabled = true;
+                attackDirectionList[3].GetComponent<AttackZoneSystem>().DealDamageToEnemy(playerDamage);
                 break;
 
             default:
-                attackDirectionList[4].GetComponent<SpriteRenderer>().enabled = true;
                 break;
 
         }
 
         yield return new WaitForSeconds(0.3f);
 
-        GetComponent<PlayerMovement>().isPlayerMoovAvailable = true;
-
-        switch (attackDirection)          //0 = right 1 = left 2 = up 3 = down
+        switch (attackDirection)          //0 = right 1 = left 2 = up 3 = down          Temporary switch delete when the animator is done
         {
             case 0:
                 attackDirectionList[0].GetComponent<SpriteRenderer>().enabled = false;
@@ -80,7 +87,7 @@ public class PlayerAttack : MonoBehaviour
                 break;
 
             case 2:
-                attackDirectionList[2].GetComponent<SpriteRenderer>().enabled = false;
+                attackDirectionList[2].GetComponent<SpriteRenderer>().enabled = false;              
                 break;
 
             case 3:
@@ -88,12 +95,15 @@ public class PlayerAttack : MonoBehaviour
                 break;
 
             default:
-                attackDirectionList[4].GetComponent<SpriteRenderer>().enabled = false;
                 break;
 
         }
 
-        yield return new WaitForSeconds(10f);
+        PlayerMovement.isPlayerMoovAvailable = true;
+
+        yield return new WaitForSeconds(attackSpeed);
+
         isPlayerAttackAvailable = true;
+        Debug.Log(PlayerAttack.isPlayerAttackAvailable);
     }
 }

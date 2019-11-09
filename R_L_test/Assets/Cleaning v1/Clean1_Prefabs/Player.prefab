@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3252117685764135378}
   - component: {fileID: 8945091681073508983}
   - component: {fileID: 5468368526050592243}
+  - component: {fileID: 5583527084776143918}
   m_Layer: 0
   m_Name: 1_AttackZoneLeft
   m_TagString: AttackDirection
@@ -107,6 +108,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5583527084776143918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516836850977574940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e01ad03106faf847b3947048b1d0e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyInRangList: []
 --- !u!1 &707638920974407221
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +132,7 @@ GameObject:
   - component: {fileID: 8370728008843581887}
   - component: {fileID: 8274198985448774248}
   - component: {fileID: 6124193161816378921}
+  - component: {fileID: 1676857391457791048}
   m_Layer: 0
   m_Name: 0_AttackZoneRight
   m_TagString: AttackDirection
@@ -214,6 +229,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1676857391457791048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707638920974407221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e01ad03106faf847b3947048b1d0e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyInRangList: []
 --- !u!1 &1222580304859804557
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +253,7 @@ GameObject:
   - component: {fileID: 1853804043305398648}
   - component: {fileID: 402720237704437981}
   - component: {fileID: 7751743929246170233}
+  - component: {fileID: 4432934909922078468}
   m_Layer: 0
   m_Name: 2_AttackZoneUp
   m_TagString: AttackDirection
@@ -321,6 +350,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4432934909922078468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222580304859804557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e01ad03106faf847b3947048b1d0e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyInRangList: []
 --- !u!1 &6181496510530009862
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +374,7 @@ GameObject:
   - component: {fileID: 3840587400939030308}
   - component: {fileID: 8787949816428291517}
   - component: {fileID: 112165377907637376}
+  - component: {fileID: 8278670302583215993}
   m_Layer: 0
   m_Name: 3_AttackZoneDown
   m_TagString: AttackDirection
@@ -428,6 +471,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8278670302583215993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181496510530009862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e01ad03106faf847b3947048b1d0e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyInRangList: []
 --- !u!1 &7226082487293605207
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,17 +622,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRgb: {fileID: 0}
-  isPlayerMoovAvailable: 0
   speed: 250
   move: {x: 0, y: 0, z: 0}
   inputHorizontalMoove: 0
   inputVerticalMoove: 0
   playerDirection: 0
   lastMove: {x: 0, y: 0, z: 0}
-  isPlayerDashAvailable: 0
-  dashSpeed: 6
-  dashTime: 0.5
-  dashCooldown: 2
+  dashSpeed: 10
+  dashTime: 0.2
+  dashCooldown: 1
   dashCurve:
     serializedVersion: 2
     m_Curve:
@@ -622,7 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe2b0b1b9bcdee4292b00e8f85a5709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerAttackAvailable: 1
-  attackSpeed: 2
+  attackSpeed: 0.5
   attackDirectionList: []
   attackDirection: 0
+  playerDamage: 15
