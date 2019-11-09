@@ -23,11 +23,22 @@ public class AttackZoneSystem : MonoBehaviour
         }
     }
 
-    public void DealDamageToEnemy(float damage)
+    public void LaunchAttack(float damage)
     {
+        StartCoroutine(Attack(damage));
+    }
+
+    IEnumerator Attack(float damage)
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
+
         for (int i = 0; i < enemyInRangList.Count; i++)
         {
             enemyInRangList[i].GetComponent<EnemyHealthSystem>().EnemyIsTakingDamage(damage);
         }
+
+        yield return new WaitForSeconds(0.3f);
+
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 }

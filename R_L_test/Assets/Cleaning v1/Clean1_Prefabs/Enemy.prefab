@@ -493,6 +493,7 @@ MonoBehaviour:
   thisEnemy: {fileID: 967274091731682327}
   attackDirection: 0
   enemyDamage: 10
+  dangerTime: 0.5
 --- !u!1 &2105448183835064182
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +590,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 2245fce649a76a3469ec0a86a3f15c02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -614,6 +615,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRangList: []
+  sRenderer: {fileID: 8085192821560164457}
+  dangerSign: {fileID: 21300000, guid: 5be00a9876b4db84a9a2d082cecfa8b4, type: 3}
+  sword: {fileID: 21300000, guid: 2245fce649a76a3469ec0a86a3f15c02, type: 3}
 --- !u!1 &2124765699057940810
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +714,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 2245fce649a76a3469ec0a86a3f15c02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -735,6 +739,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRangList: []
+  sRenderer: {fileID: 8085192821560164457}
+  dangerSign: {fileID: 21300000, guid: 5be00a9876b4db84a9a2d082cecfa8b4, type: 3}
+  sword: {fileID: 21300000, guid: 2245fce649a76a3469ec0a86a3f15c02, type: 3}
 --- !u!1 &4768831595635319379
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +838,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 2245fce649a76a3469ec0a86a3f15c02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -856,6 +863,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRangList: []
+  sRenderer: {fileID: 8085192821560164457}
+  dangerSign: {fileID: 21300000, guid: 5be00a9876b4db84a9a2d082cecfa8b4, type: 3}
+  sword: {fileID: 21300000, guid: 2245fce649a76a3469ec0a86a3f15c02, type: 3}
 --- !u!1 &5119404056008389853
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,7 +962,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 2245fce649a76a3469ec0a86a3f15c02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -977,3 +987,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRangList: []
+  sRenderer: {fileID: 8085192821560164457}
+  dangerSign: {fileID: 21300000, guid: 5be00a9876b4db84a9a2d082cecfa8b4, type: 3}
+  sword: {fileID: 21300000, guid: 2245fce649a76a3469ec0a86a3f15c02, type: 3}

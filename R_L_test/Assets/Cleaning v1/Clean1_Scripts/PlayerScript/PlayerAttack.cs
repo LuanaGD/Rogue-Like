@@ -46,58 +46,7 @@ public class PlayerAttack : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         isPlayerAttackAvailable = false;
 
-        switch (attackDirection)          //0 = right 1 = left 2 = up 3 = down
-        {
-            case 0:
-                attackDirectionList[0].GetComponent<SpriteRenderer>().enabled = true;
-                attackDirectionList[0].GetComponent<AttackZoneSystem>().DealDamageToEnemy(playerDamage);
-
-                break;
-
-            case 1:
-                attackDirectionList[1].GetComponent<SpriteRenderer>().enabled = true;
-                attackDirectionList[1].GetComponent<AttackZoneSystem>().DealDamageToEnemy(playerDamage);
-                break;
-
-            case 2:
-                attackDirectionList[2].GetComponent<SpriteRenderer>().enabled = true;
-                attackDirectionList[2].GetComponent<AttackZoneSystem>().DealDamageToEnemy(playerDamage);
-                break;
-
-            case 3:
-                attackDirectionList[3].GetComponent<SpriteRenderer>().enabled = true;
-                attackDirectionList[3].GetComponent<AttackZoneSystem>().DealDamageToEnemy(playerDamage);
-                break;
-
-            default:
-                break;
-
-        }
-
-        yield return new WaitForSeconds(0.3f);
-
-        switch (attackDirection)          //0 = right 1 = left 2 = up 3 = down          Temporary switch delete when the animator is done
-        {
-            case 0:
-                attackDirectionList[0].GetComponent<SpriteRenderer>().enabled = false;
-                break;
-
-            case 1:
-                attackDirectionList[1].GetComponent<SpriteRenderer>().enabled = false;
-                break;
-
-            case 2:
-                attackDirectionList[2].GetComponent<SpriteRenderer>().enabled = false;              
-                break;
-
-            case 3:
-                attackDirectionList[3].GetComponent<SpriteRenderer>().enabled = false;
-                break;
-
-            default:
-                break;
-
-        }
+        attackDirectionList[attackDirection].GetComponent<AttackZoneSystem>().LaunchAttack(playerDamage);
 
         PlayerMovement.isPlayerMoovAvailable = true;
 
