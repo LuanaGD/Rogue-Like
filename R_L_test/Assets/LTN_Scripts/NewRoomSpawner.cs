@@ -12,21 +12,21 @@ public class NewRoomSpawner : MonoBehaviour
 
     private RoomTemplates templates;
     private int rand;
-    private bool spawned;
+    public bool spawned;
 
     public float waitTime = 4f;
-
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Room").GetComponent<RoomTemplates>();
-        Invoke("Spawn", 0.5f);
+        Invoke("Spawn", 0.5f);        
+        //balancer une boucle pour refaire l'étage si celui-ci n'est pas aux normes
     }
 
     // Update is called once per frame
-    void Spawn()
+    public void Spawn() //création des salles "normales"
     {
         if (spawned == false && templates.rooms.Count <= 10)
         {
@@ -85,13 +85,13 @@ public class NewRoomSpawner : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision) //création de salles spéciales
     {
         if(collision.CompareTag("SpawnRoomPoint"))
         {
-            if(collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false)
+            if(collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false) //création des salles dans des cas spéciaux (2 directions)
             {
-                /*if(openingDirection == 1 && openingDirection == 2)
+                if(openingDirection == 1 && openingDirection == 2) //salles doubles
                 {
                     Instantiate(templates.twoOpenings[3], transform.position, Quaternion.identity);
                     Destroy(gameObject);
@@ -124,7 +124,9 @@ public class NewRoomSpawner : MonoBehaviour
                     Instantiate(templates.twoOpenings[0], transform.position, Quaternion.identity);
                     Destroy(gameObject);
                 }
-                else if(openingDirection == 1 && openingDirection == 2 && openingDirection == 3)
+
+
+                /*else if(openingDirection == 1 && openingDirection == 2 && openingDirection == 3) //trois directions
                 {
                     Instantiate(templates.threeOpenings[3], transform.position, Quaternion.identity);
                     Destroy(gameObject);
@@ -150,7 +152,7 @@ public class NewRoomSpawner : MonoBehaviour
                     Destroy(gameObject);
                 }*/
 
-                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                Instantiate(templates.closedRoom, transform.position, Quaternion.identity); //Salles fermées
                 Destroy(gameObject);
 
             }
@@ -164,4 +166,10 @@ public class NewRoomSpawner : MonoBehaviour
             spawned = true;
         }
     }
-}
+
+    public bool GetSpawned(bool v)
+    {
+        return spawned;
+    }
+
+    }

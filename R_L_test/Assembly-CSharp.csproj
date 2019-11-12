@@ -65,15 +65,13 @@
   <ItemGroup>
     <Compile Include="Assets\LTN_Scripts\AddRoom.cs" />
     <Compile Include="Assets\LTN_Scripts\Destroyer.cs" />
-    <Compile Include="Assets\LTN_Scripts\Inventory.cs" />
-    <Compile Include="Assets\LTN_Scripts\ItemType.cs" />
-    <Compile Include="Assets\LTN_Scripts\LvlGeneration.cs" />
     <Compile Include="Assets\LTN_Scripts\NewRoomSpawner.cs" />
+    <Compile Include="Assets\LTN_Scripts\OldGen\LvlGeneration.cs" />
+    <Compile Include="Assets\LTN_Scripts\OldGen\RoomType.cs" />
+    <Compile Include="Assets\LTN_Scripts\OldGen\SpawnRoom.cs" />
     <Compile Include="Assets\LTN_Scripts\RoomTemplates.cs" />
-    <Compile Include="Assets\LTN_Scripts\RoomType.cs" />
-    <Compile Include="Assets\LTN_Scripts\SpawnRoom.cs" />
+    <Compile Include="Assets\LTN_Scripts\SceneRequirements.cs" />
     <Compile Include="Assets\LTN_Scripts\SpawnTile.cs" />
-    <Compile Include="Assets\LTN_Scripts\WeaponManager.cs" />
     <Compile Include="Assets\RES_Scrpit\HealTestHealth.cs" />
     <Compile Include="Assets\RES_Scrpit\PlayerManager.cs" />
     <Compile Include="Assets\RES_Scrpit\TrapTestHealth.cs" />
