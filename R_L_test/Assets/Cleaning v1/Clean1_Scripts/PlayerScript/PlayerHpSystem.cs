@@ -10,17 +10,33 @@ public class PlayerHpSystem : MonoBehaviour
     public float playerMaxHp;
     public float playerHp;
     public Image healthBar;
-
+    public Image healthBarFade;
+    public float playerHpFade;
+    public float betweenDifferenceHp = 0.1f;
 
 
     void Start()
     {
         playerHp = playerMaxHp;
+        playerHpFade = playerHp;
     }
 
     private void Update()
     {
         healthBar.fillAmount = playerHp / playerMaxHp;
+
+
+        while (playerHpFade > playerHp)
+        {
+            StartCoroutine("HealthFade");
+
+            Debug.Log(healthBarFade.fillAmount);
+        }
+
+        if (playerHpFade < playerHp)
+        {
+            playerHpFade = playerHp;
+        }
     }
 
     public void PlayerIsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
@@ -51,4 +67,14 @@ public class PlayerHpSystem : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
 
     }
+    private IEnumerator HealthFade()
+    {
+        playerHpFade -= betweenDifferenceHp;
+        new WaitForSeconds(10f);
+        healthBarFade.fillAmount = playerHpFade / playerMaxHp;
+
+
+        yield return null;
+    }
+
 }
