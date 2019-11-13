@@ -498,7 +498,6 @@ GameObject:
   - component: {fileID: 7525590254236974559}
   - component: {fileID: 4967113287841509280}
   - component: {fileID: 2215626775640550500}
-  - component: {fileID: 3087152242740393338}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -665,6 +664,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  testBastien: {fileID: 0}
 --- !u!114 &2215626775640550500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,18 +681,3 @@ MonoBehaviour:
   attackDirectionList: []
   attackDirection: 0
   playerDamage: 15
---- !u!114 &3087152242740393338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7226082487293605207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf5c9b9631c947144afa6c14aadc12ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMaxHp: 100
-  playerHp: 0
-  healthBar: {fileID: 0}

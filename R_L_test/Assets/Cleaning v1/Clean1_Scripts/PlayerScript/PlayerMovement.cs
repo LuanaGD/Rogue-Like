@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown;
     public AnimationCurve dashCurve;
 
+
     void Start()
     {
         playerRgb = GetComponent<Rigidbody2D>();
@@ -41,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         lastMove = new Vector3(1,0,0);
 
         isPlayerDashing = false;
+
+
     }
 
     
