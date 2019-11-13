@@ -10,6 +10,7 @@ TagManager:
   - SpawnRoomPoint
   - Room
   - StartSpawn
+  - Check
   layers:
   - Default
   - TransparentFX

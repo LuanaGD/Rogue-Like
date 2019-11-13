@@ -21,14 +21,13 @@ public class NewRoomSpawner : MonoBehaviour
     {
         Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Room").GetComponent<RoomTemplates>();
-        Invoke("Spawn", 0.5f);        
-        //balancer une boucle pour refaire l'étage si celui-ci n'est pas aux normes
+        Invoke("Spawn", 0.5f);
     }
 
     // Update is called once per frame
     public void Spawn() //création des salles "normales"
     {
-        if (spawned == false && templates.rooms.Count <= 10)
+        if (spawned == false && templates.rooms.Count < 13)
         {
             if (openingDirection == 1)
             {
@@ -58,7 +57,7 @@ public class NewRoomSpawner : MonoBehaviour
             spawned = true;
         }
 
-        else if(spawned == false && templates.rooms.Count >= 10)
+        else if(spawned == false && templates.rooms.Count >= 13)
         {
             if (openingDirection == 1)
             {
@@ -167,7 +166,7 @@ public class NewRoomSpawner : MonoBehaviour
         }
     }
 
-    public bool GetSpawned(bool v)
+    public bool GetSpawned()
     {
         return spawned;
     }

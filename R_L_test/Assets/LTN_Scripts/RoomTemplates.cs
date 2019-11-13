@@ -10,7 +10,7 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] leftRooms;
     public GameObject[] twoOpenings;
     public GameObject[] threeOpenings;
-
+ 
     public GameObject leftClosing;
     public GameObject rightClosing;
     public GameObject upClosing;
@@ -21,13 +21,16 @@ public class RoomTemplates : MonoBehaviour
     public List<GameObject> rooms;
 
     public float waitTime;
+    public float checkTime;
     public bool spawnBoss;
     public GameObject boss;
+
+    private SceneRequirements sceneCleaner;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        sceneCleaner = GameObject.FindGameObjectWithTag("Check").GetComponent<SceneRequirements>();
     }
 
     // Update is called once per frame
@@ -37,7 +40,7 @@ public class RoomTemplates : MonoBehaviour
         {
             for (int i = 0; i < rooms.Count; i++)
             {
-                if(rooms.Count >= 10 && i == rooms.Count - 1)
+                if(rooms.Count > 14 && i == rooms.Count - 1)
                 {
                     Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
                     spawnBoss = true;
@@ -47,6 +50,21 @@ public class RoomTemplates : MonoBehaviour
         else
         {
             waitTime -= Time.deltaTime;
+        }
+
+        if(checkTime <= 0 && spawnBoss == false)
+        {
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                if(rooms.Count < 17 && checkTime <= waitTime)
+                {
+                    sceneCleaner.SceneReset();
+                }
+            }
+        }
+        else
+        {
+            checkTime -= Time.deltaTime;
         }
     }
 }

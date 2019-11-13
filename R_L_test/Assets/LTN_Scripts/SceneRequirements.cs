@@ -1,25 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class SceneRequirements : MonoBehaviour
 {
-    public RoomTemplates roomTemp;
-    public NewRoomSpawner roomSpawner;
+    private RoomTemplates roomTemp;
+    private NewRoomSpawner roomSpawner;
 
-    [SerializeField]
-    public string sceneName;
-
-    [SerializeField]
-    public int sceneNumber;
+    public bool sceneVerified;
 
     // Start is called before the first frame update
     void Start()
     {
         roomTemp = GameObject.FindGameObjectWithTag("Room").GetComponent<RoomTemplates>();
-        roomSpawner.GetComponent<NewRoomSpawner>().GetSpawned(v: true);
-
+        roomSpawner = GameObject.FindGameObjectWithTag("SpawnRoomPoint").GetComponent<NewRoomSpawner>();
+        SceneChecker();
     }
 
     // Update is called once per frame
@@ -28,15 +24,24 @@ public class SceneRequirements : MonoBehaviour
         
     }
 
-    void SceneChecker()
+    public void SceneChecker()
     {
-        if (roomTemp.rooms.Count <= 10 && roomSpawner.GetSpawned(v: true) == true)
+        if (roomTemp.rooms.Count <= 16 && roomSpawner.spawned == true && sceneVerified == false)
         {
-            
+            SceneManager.LoadScene("LTN_GoodProcedural", LoadSceneMode.Single);
+            Debug.Log("Requirements not met");
         }
-        else if (roomTemp.rooms.Count >= 10 && spawned == true)
+        else if (roomTemp.rooms.Count >= 16 && roomSpawner.spawned == false && sceneVerified == false)
         {
+            Debug.Log("Requirements met");
+        }
 
-        }
+        sceneVerified = true;
     }
+
+    public void SceneReset()
+    {
+        SceneManager.LoadScene("LTN_GoodProcedural", LoadSceneMode.Single);
+    }
+
 }
