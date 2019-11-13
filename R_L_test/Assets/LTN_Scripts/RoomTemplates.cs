@@ -56,7 +56,7 @@ public class RoomTemplates : MonoBehaviour
         {
             for (int i = 0; i < rooms.Count; i++)
             {
-                if(rooms.Count < 17 && checkTime <= waitTime)
+                if(rooms.Count < 16 && checkTime < waitTime && spawnBoss == false || rooms.Count < 16 && spawnBoss == false || rooms.Count > 16 && spawnBoss == false || rooms.Count < 16 && spawnBoss == true && checkTime < waitTime)
                 {
                     sceneCleaner.SceneReset();
                 }
