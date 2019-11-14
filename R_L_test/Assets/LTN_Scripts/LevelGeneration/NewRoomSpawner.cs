@@ -11,6 +11,8 @@ public class NewRoomSpawner : MonoBehaviour
     //4--> Has left Door
 
     private RoomTemplates templates;
+    private RoomID idRoom;
+    private RoomCheck roomCheck;
     private int rand;
     public bool spawned;
 
@@ -21,6 +23,8 @@ public class NewRoomSpawner : MonoBehaviour
     {
         Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Room").GetComponent<RoomTemplates>();
+        idRoom = GameObject.FindGameObjectWithTag("SpawnRoomPoint").GetComponent<RoomID>();
+        roomCheck = GameObject.FindGameObjectWithTag("Check").GetComponent<RoomCheck>();
         Invoke("Spawn", 0.5f);
     }
 
@@ -57,7 +61,7 @@ public class NewRoomSpawner : MonoBehaviour
             spawned = true;
         }
 
-        else if(spawned == false && templates.rooms.Count >= 13)
+        else if (spawned == false && templates.rooms.Count >= 13)
         {
             if (openingDirection == 1)
             {
@@ -84,76 +88,45 @@ public class NewRoomSpawner : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision) //création de salles spéciales
+    /*void OnTriggerEnter2D(Collider2D collision) //création de salles spéciales
     {
-        if(collision.CompareTag("SpawnRoomPoint"))
+        if (collision.CompareTag("SpawnRoomPoint"))
         {
-            if(collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false) //création des salles dans des cas spéciaux (2 directions)
+            if (collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false) //création des salles dans des cas spéciaux (2 directions)
             {
-                if(openingDirection == 1 && openingDirection == 2) //salles doubles
-                {
-                    Instantiate(templates.twoOpenings[3], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-                else if(openingDirection == 1 && openingDirection == 3)
-                {
-                    Instantiate(templates.twoOpenings[4], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-
-                else if(openingDirection == 1 && openingDirection == 4)
-                {
-                    Instantiate(templates.twoOpenings[2], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-
-                else if(openingDirection == 2 && openingDirection == 3)
-                {
-                    Instantiate(templates.twoOpenings[5], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-
-                else if(openingDirection == 2 && openingDirection == 4)
-                {
-                    Instantiate(templates.twoOpenings[1], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-                else if(openingDirection == 3 && openingDirection == 4)
-                {
-                    Instantiate(templates.twoOpenings[0], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-
-
-                /*else if(openingDirection == 1 && openingDirection == 2 && openingDirection == 3) //trois directions
-                {
-                    Instantiate(templates.threeOpenings[3], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-                else if (openingDirection == 1 && openingDirection == 2 && openingDirection == 4)
-                {
-                    Instantiate(templates.threeOpenings[2], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-                else if (openingDirection == 1 && openingDirection == 3 && openingDirection == 4)
-                {
-                    Instantiate(templates.threeOpenings[0], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-                else if (openingDirection == 2 && openingDirection == 3 && openingDirection == 4)
-                {
-                    Instantiate(templates.threeOpenings[1], transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
-                    Destroy(gameObject);
-                }*/
-
-                Instantiate(templates.closedRoom, transform.position, Quaternion.identity); //Salles fermées
+                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Destroy(gameObject);
 
+                if (roomCheck.checkDown == true && roomCheck.checkRight == true)
+                {
+                    Instantiate(templates.twoOpenings[4], transform.position, Quaternion.identity);
+                    Destroy(roomCheck.roomToDestroy);
+                }
+                else if (roomCheck.checkDown == true && roomCheck.checkLeft == true)
+                {
+                    Instantiate(templates.twoOpenings[2], transform.position, Quaternion.identity);
+                    Destroy(roomCheck.roomToDestroy);
+                }
+                else if (roomCheck.checkDown == true && roomCheck.checkUp == true)
+                {
+                    Instantiate(templates.twoOpenings[3], transform.position, Quaternion.identity);
+                    Destroy(roomCheck.roomToDestroy);
+                }
+                else if (roomCheck.checkUp == true && roomCheck.checkRight == true)
+                {
+                    Instantiate(templates.twoOpenings[5], transform.position, Quaternion.identity);
+                    Destroy(roomCheck.roomToDestroy);
+                }
+                else if (roomCheck.checkUp == true && roomCheck.checkLeft == true)
+                {
+                    Instantiate(templates.twoOpenings[1], transform.position, Quaternion.identity);
+                    Destroy(roomCheck.roomToDestroy);
+                }
+                else if (roomCheck.checkRight == true && roomCheck.checkLeft == true)
+                {
+                    Instantiate(templates.twoOpenings[0], transform.position, Quaternion.identity);
+                    Destroy(roomCheck.roomToDestroy);
+                }
             }
             spawned = true;
 
@@ -164,11 +137,11 @@ public class NewRoomSpawner : MonoBehaviour
             Destroy(gameObject);
             spawned = true;
         }
-    }
+    }*/
 
     public bool GetSpawned()
     {
         return spawned;
     }
 
-    }
+}

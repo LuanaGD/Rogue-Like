@@ -63,19 +63,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LTN_Scripts\AddRoom.cs" />
-    <Compile Include="Assets\LTN_Scripts\Destroyer.cs" />
-    <Compile Include="Assets\LTN_Scripts\NewRoomSpawner.cs" />
+    <Compile Include="Assets\LTN_Scripts\LevelGeneration\AddRoom.cs" />
+    <Compile Include="Assets\LTN_Scripts\LevelGeneration\CheckerColliding.cs" />
+    <Compile Include="Assets\LTN_Scripts\LevelGeneration\Destroyer.cs" />
+    <Compile Include="Assets\LTN_Scripts\LevelGeneration\NewRoomSpawner.cs" />
+    <Compile Include="Assets\LTN_Scripts\LevelGeneration\RoomCheck.cs" />
+    <Compile Include="Assets\LTN_Scripts\LevelGeneration\RoomID.cs" />
+    <Compile Include="Assets\LTN_Scripts\LevelGeneration\RoomTemplates.cs" />
     <Compile Include="Assets\LTN_Scripts\OldGen\LvlGeneration.cs" />
     <Compile Include="Assets\LTN_Scripts\OldGen\RoomType.cs" />
     <Compile Include="Assets\LTN_Scripts\OldGen\SpawnRoom.cs" />
-    <Compile Include="Assets\LTN_Scripts\RoomTemplates.cs" />
-    <Compile Include="Assets\LTN_Scripts\SceneRequirements.cs" />
+    <Compile Include="Assets\LTN_Scripts\SceneRelated\SceneRequirements.cs" />
     <Compile Include="Assets\LTN_Scripts\SpawnTile.cs" />
     <Compile Include="Assets\RES_Scrpit\HealTestHealth.cs" />
     <Compile Include="Assets\RES_Scrpit\PlayerManager.cs" />
     <Compile Include="Assets\RES_Scrpit\TrapTestHealth.cs" />
-    <Compile Include="Assets\SceneClear.cs" />
     <Compile Include="Assets\XP_Scripts\Xp_EnemyHealthCount.cs" />
     <Compile Include="Assets\XP_Scripts\XP_EnemyMovement.cs" />
     <Compile Include="Assets\XP_Scripts\XP_PlayerMovement.cs" />

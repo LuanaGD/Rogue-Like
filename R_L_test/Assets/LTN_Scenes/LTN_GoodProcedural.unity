@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc47852c8fa05142a4ddffabac4b553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneVerified: 0
 --- !u!4 &128777354
 Transform:
   m_ObjectHideFlags: 0
@@ -233,7 +232,6 @@ GameObject:
   - component: {fileID: 506874800}
   - component: {fileID: 506874802}
   - component: {fileID: 506874801}
-  - component: {fileID: 506874803}
   m_Layer: 8
   m_Name: RoomSpawner (1)
   m_TagString: SpawnRoomPoint
@@ -302,21 +300,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &506874803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506874799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd01305a2637e4d4e8457887f4e5d2fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openingDirection: 4
-  spawned: 0
-  waitTime: 4
 --- !u!1 &525638121
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +476,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
+  templates: {fileID: 0}
+  idRoom: {fileID: 0}
+  rand: 0
   spawned: 0
   waitTime: 4
 --- !u!1 &1014935634
@@ -588,6 +574,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 1
+  templates: {fileID: 0}
+  idRoom: {fileID: 0}
+  rand: 0
   spawned: 0
   waitTime: 4
 --- !u!1 &1086451410
@@ -683,6 +672,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 2
+  templates: {fileID: 0}
+  idRoom: {fileID: 0}
+  rand: 0
   spawned: 0
   waitTime: 4
 --- !u!1 &1924872764
@@ -804,7 +796,7 @@ MonoBehaviour:
   closedRoom: {fileID: 2648929447811023017, guid: a4d1c301df8957542a85b6af56a59610,
     type: 3}
   rooms: []
-  waitTime: 2
+  waitTime: 1
   checkTime: 3
   spawnBoss: 0
   boss: {fileID: 3618226766266523525, guid: 769c2e5cd85fb894ca9d88c7f1916595, type: 3}
@@ -855,6 +847,7 @@ GameObject:
   - component: {fileID: 4468942834478865437}
   - component: {fileID: 1748388604139339396}
   - component: {fileID: 3484592210988186396}
+  - component: {fileID: 3484592210988186397}
   m_Layer: 8
   m_Name: Destroyer
   m_TagString: StartSpawn
@@ -874,6 +867,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dfbb2ada397f44b805e250bfb391b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3484592210988186397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484592210988186395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cefc3184c6b3994a9d96de452c8b51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomID: 0
 --- !u!61 &4468942834478865437
 BoxCollider2D:
   m_ObjectHideFlags: 0
