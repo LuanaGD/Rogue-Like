@@ -11,6 +11,7 @@ TagManager:
   - Room
   - StartSpawn
   - Check
+  - ClosedRoom
   layers:
   - Default
   - TransparentFX

@@ -98,12 +98,13 @@ public class NewRoomSpawner : MonoBehaviour
                 Destroy(roomCheck.roomToDestroy);
                 Destroy(gameObject);
 
-                if (roomCheck.checkDown == true && roomCheck.checkRight == true)
+                if (roomCheck.checkDown == true && roomCheck.checkRight == true)//la bonne room s'instancie bel et bien, je dois juste delete les Closed rooms qui se créent
                 {
                     Destroy(roomCheck.roomToDestroy.transform.GetChild(2));
                     Destroy(roomCheck.roomToDestroy.transform.GetChild(1));
                     Instantiate(templates.twoOpenings[4], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
+                    DestroyClosed();
                 }
                 else if (roomCheck.checkDown == true && roomCheck.checkLeft == true)
                 {
@@ -111,13 +112,15 @@ public class NewRoomSpawner : MonoBehaviour
                     Destroy(roomCheck.roomToDestroy.transform.GetChild(0));
                     Instantiate(templates.twoOpenings[2], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
+                    DestroyClosed();
                 }
                 else if (roomCheck.checkDown == true && roomCheck.checkUp == true)
                 {
                     Destroy(roomCheck.roomToDestroy.transform.GetChild(2));
                     Destroy(roomCheck.roomToDestroy.transform.GetChild(3));
                     Instantiate(templates.twoOpenings[3], transform.position, Quaternion.identity);
-                    Destroy(roomCheck.roomToDestroy) ;
+                    Destroy(roomCheck.roomToDestroy);
+                    DestroyClosed();
                 }
                 else if (roomCheck.checkUp == true && roomCheck.checkRight == true)
                 {
@@ -125,6 +128,7 @@ public class NewRoomSpawner : MonoBehaviour
                     Destroy(roomCheck.roomToDestroy.transform.GetChild(1));
                     Instantiate(templates.twoOpenings[5], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
+                    DestroyClosed();
                 }
                 else if (roomCheck.checkUp == true && roomCheck.checkLeft == true)
                 {
@@ -132,6 +136,7 @@ public class NewRoomSpawner : MonoBehaviour
                     Destroy(roomCheck.roomToDestroy.transform.GetChild(0));
                     Instantiate(templates.twoOpenings[1], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
+                    DestroyClosed();
                 }
                 else if (roomCheck.checkRight == true && roomCheck.checkLeft == true)
                 {
@@ -139,6 +144,7 @@ public class NewRoomSpawner : MonoBehaviour
                     Destroy(roomCheck.roomToDestroy.transform.GetChild(0));
                     Instantiate(templates.twoOpenings[0], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
+                    DestroyClosed();
                 }
             }
             spawned = true;
@@ -155,6 +161,18 @@ public class NewRoomSpawner : MonoBehaviour
     public bool GetSpawned()
     {
         return spawned;
+    }
+
+    public void DestroyClosed()
+    {
+        GameObject[] roomToReplace;
+        roomToReplace = GameObject.FindGameObjectsWithTag("ClosedRoom");
+
+        foreach(GameObject closedR in roomToReplace) 
+        {
+            Destroy(closedR);
+        }
+        
     }
 
 }

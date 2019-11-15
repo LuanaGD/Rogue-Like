@@ -1094,7 +1094,7 @@ GameObject:
   - component: {fileID: 2648929447811023018}
   m_Layer: 8
   m_Name: ClosedRoom
-  m_TagString: Untagged
+  m_TagString: ClosedRoom
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2076,17 +2076,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8151887dda1e34695c2d7e4b8a7238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDown: {fileID: 5205016817500049743}
-  checkUp: {fileID: 8746172652588737753}
-  checkRight: {fileID: 3884012421829131604}
-  checkLeft: {fileID: 22348318248037900}
-  collidingDown: 0
-  collidingUp: 0
-  collidingRight: 0
-  collidingLeft: 0
+  checkDown: 0
+  checkUp: 0
+  checkRight: 0
+  checkLeft: 0
   roomToDestroy: {fileID: 8435060985155450948}
   collisionCheck: {fileID: 0}
   collideCheck: {fileID: 0}
+  rTemplate: {fileID: 0}
 --- !u!1 &8730994757381031808
 GameObject:
   m_ObjectHideFlags: 0
