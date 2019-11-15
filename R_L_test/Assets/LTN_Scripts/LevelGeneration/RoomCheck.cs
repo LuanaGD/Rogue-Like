@@ -23,16 +23,19 @@ public class RoomCheck : MonoBehaviour
         collideCheck = GameObject.FindGameObjectWithTag("Check").GetComponent<CheckerColliding>();
         rTemplate = GameObject.FindGameObjectWithTag("Room").GetComponent<RoomTemplates>();
 
-        checkDown = transform.GetChild(2).gameObject.GetComponent<CheckerColliding>().GetColliding(); //chercher emplacement (transform).GetChild(index de l'enfant).gameObject(pour choper le type gameObjet et pas le transform).GetComponent<scriptcherché>.fonction cherchée;
+        /*checkDown = transform.GetChild(2).gameObject.GetComponent<CheckerColliding>().GetColliding(); //chercher emplacement (transform).GetChild(index de l'enfant).gameObject(pour choper le type gameObjet et pas le transform).GetComponent<scriptcherché>.fonction cherchée;
         checkUp = transform.GetChild(3).gameObject.GetComponent<CheckerColliding>().GetColliding();
         checkRight = transform.GetChild(1).gameObject.GetComponent<CheckerColliding>().GetColliding();
-        checkLeft = transform.GetChild(0).gameObject.GetComponent<CheckerColliding>().GetColliding();
+        checkLeft = transform.GetChild(0).gameObject.GetComponent<CheckerColliding>().GetColliding();*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        checkDown = transform.GetChild(2).gameObject.GetComponent<CheckerColliding>().GetColliding(); //chercher emplacement (transform).GetChild(index de l'enfant).gameObject(pour choper le type gameObjet et pas le transform).GetComponent<scriptcherché>.fonction cherchée;
+        checkUp = transform.GetChild(3).gameObject.GetComponent<CheckerColliding>().GetColliding();
+        checkRight = transform.GetChild(1).gameObject.GetComponent<CheckerColliding>().GetColliding();
+        checkLeft = transform.GetChild(0).gameObject.GetComponent<CheckerColliding>().GetColliding();
     }
 
 

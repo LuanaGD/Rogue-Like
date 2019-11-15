@@ -95,6 +95,7 @@ public class NewRoomSpawner : MonoBehaviour
             if (collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false) //création des salles dans des cas spéciaux (2 directions)
             {
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                Destroy(roomCheck.roomToDestroy);
                 Destroy(gameObject);
 
                 if (roomCheck.checkDown == true && roomCheck.checkRight == true)
