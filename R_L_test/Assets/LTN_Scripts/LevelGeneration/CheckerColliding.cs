@@ -26,7 +26,7 @@ public class CheckerColliding : MonoBehaviour
         }
         else
         {
-
+            isColliding = false;
         }
     }
 

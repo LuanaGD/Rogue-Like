@@ -88,7 +88,7 @@ public class NewRoomSpawner : MonoBehaviour
         }
     }
 
-    /*void OnTriggerEnter2D(Collider2D collision) //création de salles spéciales
+    void OnTriggerEnter2D(Collider2D collision) //création de salles spéciales
     {
         if (collision.CompareTag("SpawnRoomPoint"))
         {
@@ -99,31 +99,43 @@ public class NewRoomSpawner : MonoBehaviour
 
                 if (roomCheck.checkDown == true && roomCheck.checkRight == true)
                 {
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(2));
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(1));
                     Instantiate(templates.twoOpenings[4], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
                 }
                 else if (roomCheck.checkDown == true && roomCheck.checkLeft == true)
                 {
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(2));
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(0));
                     Instantiate(templates.twoOpenings[2], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
                 }
                 else if (roomCheck.checkDown == true && roomCheck.checkUp == true)
                 {
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(2));
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(3));
                     Instantiate(templates.twoOpenings[3], transform.position, Quaternion.identity);
-                    Destroy(roomCheck.roomToDestroy);
+                    Destroy(roomCheck.roomToDestroy) ;
                 }
                 else if (roomCheck.checkUp == true && roomCheck.checkRight == true)
                 {
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(3));
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(1));
                     Instantiate(templates.twoOpenings[5], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
                 }
                 else if (roomCheck.checkUp == true && roomCheck.checkLeft == true)
                 {
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(3));
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(0));
                     Instantiate(templates.twoOpenings[1], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
                 }
                 else if (roomCheck.checkRight == true && roomCheck.checkLeft == true)
                 {
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(1));
+                    Destroy(roomCheck.roomToDestroy.transform.GetChild(0));
                     Instantiate(templates.twoOpenings[0], transform.position, Quaternion.identity);
                     Destroy(roomCheck.roomToDestroy);
                 }
@@ -137,7 +149,7 @@ public class NewRoomSpawner : MonoBehaviour
             Destroy(gameObject);
             spawned = true;
         }
-    }*/
+    }
 
     public bool GetSpawned()
     {
