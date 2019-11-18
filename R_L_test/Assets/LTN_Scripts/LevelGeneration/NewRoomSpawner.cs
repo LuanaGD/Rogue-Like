@@ -16,6 +16,8 @@ public class NewRoomSpawner : MonoBehaviour
     private int rand;
     public bool spawned;
 
+    public GameObject closing;
+
     public float waitTime = 4f;
 
     // Start is called before the first frame update
@@ -95,58 +97,34 @@ public class NewRoomSpawner : MonoBehaviour
             if (collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false) //création des salles dans des cas spéciaux (2 directions)
             {
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
-                Destroy(roomCheck.roomToDestroy);
                 Destroy(gameObject);
-
-                if (roomCheck.checkDown == true && roomCheck.checkRight == true)//la bonne room s'instancie bel et bien, je dois juste delete les Closed rooms qui se créent
-                {
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(2));
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(1));
-                    Instantiate(templates.twoOpenings[4], transform.position, Quaternion.identity);
-                    Destroy(roomCheck.roomToDestroy);
-                    DestroyClosed();
-                }
-                else if (roomCheck.checkDown == true && roomCheck.checkLeft == true)
-                {
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(2));
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(0));
-                    Instantiate(templates.twoOpenings[2], transform.position, Quaternion.identity);
-                    Destroy(roomCheck.roomToDestroy);
-                    DestroyClosed();
-                }
-                else if (roomCheck.checkDown == true && roomCheck.checkUp == true)
-                {
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(2));
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(3));
-                    Instantiate(templates.twoOpenings[3], transform.position, Quaternion.identity);
-                    Destroy(roomCheck.roomToDestroy);
-                    DestroyClosed();
-                }
-                else if (roomCheck.checkUp == true && roomCheck.checkRight == true)
-                {
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(3));
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(1));
-                    Instantiate(templates.twoOpenings[5], transform.position, Quaternion.identity);
-                    Destroy(roomCheck.roomToDestroy);
-                    DestroyClosed();
-                }
-                else if (roomCheck.checkUp == true && roomCheck.checkLeft == true)
-                {
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(3));
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(0));
-                    Instantiate(templates.twoOpenings[1], transform.position, Quaternion.identity);
-                    Destroy(roomCheck.roomToDestroy);
-                    DestroyClosed();
-                }
-                else if (roomCheck.checkRight == true && roomCheck.checkLeft == true)
-                {
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(1));
-                    Destroy(roomCheck.roomToDestroy.transform.GetChild(0));
-                    Instantiate(templates.twoOpenings[0], transform.position, Quaternion.identity);
-                    Destroy(roomCheck.roomToDestroy);
-                    DestroyClosed();
-                }
             }
+            else if (spawned == false && collision.GetComponent<NewRoomSpawner>().spawned == true) // c'est le roomspawner qui instancie le closing, et pas la room. Le POLISHER
+            {
+                Debug.Log("COLLIDE");
+                if(openingDirection == 1)
+                {
+                    closing.transform.gameObject.SetActive(true);
+                }
+                else if (openingDirection == 2)
+                {
+                    closing.transform.gameObject.SetActive(true);
+                }
+                else if (openingDirection == 3)
+                {
+                    closing.transform.gameObject.SetActive(true);
+                }
+                else if (openingDirection == 4)
+                {
+                    closing.transform.gameObject.SetActive(true);
+                }
+                Destroy(gameObject);
+                spawned = true;
+            }
+
+            //Destroy(gameObject);
+            //Destroy(roomCheck.roomToDestroy);
+            //Destroy(gameObject);
             spawned = true;
 
             //Destroy(gameObject);
@@ -158,12 +136,37 @@ public class NewRoomSpawner : MonoBehaviour
         }
     }
 
+    /*private void OnTriggerEnter2D(Collider other)
+    {
+        if (other.CompareTag("SpawnRoomPoint"))
+        {
+            Debug.Log("works");
+
+            if (openingDirection == 1)
+            {
+                Instantiate(templates.roomClosing[1], transform.position, Quaternion.identity);
+            }
+            else if (openingDirection == 2)
+            {
+                Instantiate(templates.roomClosing[2], transform.position, Quaternion.identity);
+            }
+            else if (openingDirection == 3)
+            {
+                Instantiate(templates.roomClosing[3], transform.position, Quaternion.identity);
+            }
+            else if (openingDirection == 4)
+            {
+                Instantiate(templates.roomClosing[4], transform.position, Quaternion.identity);
+            }
+        }
+    }*/
+
     public bool GetSpawned()
     {
         return spawned;
     }
 
-    public void DestroyClosed()
+    /*public void DestroyClosed()
     {
         GameObject[] roomToReplace;
         roomToReplace = GameObject.FindGameObjectsWithTag("ClosedRoom");
@@ -173,6 +176,6 @@ public class NewRoomSpawner : MonoBehaviour
             Destroy(closedR);
         }
         
-    }
+    }*/
 
 }

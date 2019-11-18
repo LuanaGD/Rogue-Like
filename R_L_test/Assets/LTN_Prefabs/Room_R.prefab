@@ -54,9 +54,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6625358559073834540}
+  - component: {fileID: 5519680648920333258}
   m_Layer: 8
   m_Name: RoomSpawner
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +78,32 @@ Transform:
   m_Father: {fileID: 7911036452248244491}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &5519680648920333258
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897476596081770950}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &4093833056886378703
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 4
   spawned: 0
+  closing: {fileID: 0}
   waitTime: 4
 --- !u!1 &7911036451676607475
 GameObject:
@@ -1714,6 +1742,8 @@ GameObject:
   - component: {fileID: 5206310176632008503}
   - component: {fileID: 1381416298516579972}
   - component: {fileID: 3616794513489929086}
+  - component: {fileID: 5881272537985813058}
+  - component: {fileID: 2461503869645998738}
   m_Layer: 8
   m_Name: RoomSpawn
   m_TagString: SpawnRoomPoint
@@ -1829,3 +1859,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomID: 3
+--- !u!114 &5881272537985813058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8402419648169132910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a6f7e292d4c244283efca2948c4f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomMask:
+    serializedVersion: 2
+    m_Bits: 256
+  corrected: 0
+--- !u!114 &2461503869645998738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8402419648169132910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd01305a2637e4d4e8457887f4e5d2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openingDirection: 0
+  spawned: 1
+  closing: {fileID: 0}
+  waitTime: 4

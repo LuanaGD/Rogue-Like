@@ -10,6 +10,7 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] leftRooms;
     public GameObject[] twoOpenings;
     public GameObject[] threeOpenings;
+    public GameObject[] roomClosing;
  
     public GameObject leftClosing;
     public GameObject rightClosing;

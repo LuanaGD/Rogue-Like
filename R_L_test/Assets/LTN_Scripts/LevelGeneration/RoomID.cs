@@ -17,4 +17,9 @@ public class RoomID : MonoBehaviour
     {
         
     }
+
+    public void DestroyBadRoom()
+    {
+        Destroy(gameObject);
+    }
 }

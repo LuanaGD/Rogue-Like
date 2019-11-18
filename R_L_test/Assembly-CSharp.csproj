@@ -68,6 +68,7 @@
     <Compile Include="Assets\LTN_Scripts\LevelGeneration\Destroyer.cs" />
     <Compile Include="Assets\LTN_Scripts\LevelGeneration\NewRoomSpawner.cs" />
     <Compile Include="Assets\LTN_Scripts\LevelGeneration\RoomCheck.cs" />
+    <Compile Include="Assets\LTN_Scripts\LevelGeneration\RoomCorrector.cs" />
     <Compile Include="Assets\LTN_Scripts\LevelGeneration\RoomID.cs" />
     <Compile Include="Assets\LTN_Scripts\LevelGeneration\RoomTemplates.cs" />
     <Compile Include="Assets\LTN_Scripts\OldGen\LvlGeneration.cs" />
