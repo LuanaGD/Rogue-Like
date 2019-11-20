@@ -63,7 +63,7 @@ public class NewRoomSpawner : MonoBehaviour
             spawned = true;
         }
 
-        else if (spawned == false && templates.rooms.Count >= 13)
+        else if (spawned == false && templates.rooms.Count >= 13) //créations des sallez fermées qui permettent de ne pas déboucher sur du vide
         {
             if (openingDirection == 1)
             {
@@ -94,40 +94,39 @@ public class NewRoomSpawner : MonoBehaviour
     {
         if (collision.CompareTag("SpawnRoomPoint"))
         {
-            if (collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false) //création des salles dans des cas spéciaux (2 directions)
+            /*if (collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false) //création des salles dans des cas spéciaux (2 directions)
             {
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Destroy(gameObject);
-            }
-            else if (spawned == false && collision.GetComponent<NewRoomSpawner>().spawned == true) // c'est le roomspawner qui instancie le closing, et pas la room. Le POLISHER
+            }*/
+            if (collision.GetComponent<NewRoomSpawner>().spawned == true && spawned == true) // c'est le roomspawner qui instancie le closing, et pas la room. Le POLISHER
             {
                 Debug.Log("COLLIDE");
-                if(openingDirection == 1)
+
+                if(openingDirection == 1 && (idRoom.roomID != 1 || idRoom.roomID != 5 || idRoom.roomID != 8 || idRoom.roomID != 10))
                 {
                     closing.transform.gameObject.SetActive(true);
                 }
-                else if (openingDirection == 2)
+                else if (openingDirection == 2 && (idRoom.roomID != 2 || idRoom.roomID != 7 || idRoom.roomID != 8 || idRoom.roomID != 9))
                 {
                     closing.transform.gameObject.SetActive(true);
                 }
-                else if (openingDirection == 3)
+                else if (openingDirection == 3 && (idRoom.roomID != 3 || idRoom.roomID != 6 || idRoom.roomID != 8 || idRoom.roomID != 9))
                 {
                     closing.transform.gameObject.SetActive(true);
                 }
-                else if (openingDirection == 4)
+                else if (openingDirection == 4 && (idRoom.roomID != 4 || idRoom.roomID != 5 || idRoom.roomID != 6 || idRoom.roomID != 7))
                 {
                     closing.transform.gameObject.SetActive(true);
+                }
+                else if(idRoom.roomID == 0)
+                {
+
                 }
                 Destroy(gameObject);
                 spawned = true;
             }
 
-            //Destroy(gameObject);
-            //Destroy(roomCheck.roomToDestroy);
-            //Destroy(gameObject);
-            spawned = true;
-
-            //Destroy(gameObject);
         }
         else if (collision.CompareTag("StartSpawn"))
         {

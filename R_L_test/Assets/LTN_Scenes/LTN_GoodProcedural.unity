@@ -252,7 +252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1924872765}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &506874801
 Rigidbody2D:
@@ -315,6 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 4
   spawned: 0
+  closing: {fileID: 0}
   waitTime: 4
 --- !u!1 &525638121
 GameObject:
@@ -430,7 +431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1924872765}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &977497365
 Rigidbody2D:
@@ -493,6 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   spawned: 0
+  closing: {fileID: 0}
   waitTime: 4
 --- !u!1 &1014935634
 GameObject:
@@ -525,7 +527,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1924872765}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1014935636
 Rigidbody2D:
@@ -588,6 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 1
   spawned: 0
+  closing: {fileID: 0}
   waitTime: 4
 --- !u!1 &1086451410
 GameObject:
@@ -620,7 +623,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1924872765}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1086451412
 Rigidbody2D:
@@ -683,6 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 2
   spawned: 0
+  closing: {fileID: 0}
   waitTime: 4
 --- !u!1 &1924872764
 GameObject:
@@ -711,11 +715,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6658979489171929989}
   - {fileID: 506874800}
   - {fileID: 977497364}
   - {fileID: 1086451411}
   - {fileID: 1014935635}
-  - {fileID: 6658979489171929989}
   m_Father: {fileID: 6272934990170150877}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -860,7 +864,7 @@ GameObject:
   - component: {fileID: 1748388604139339396}
   - component: {fileID: 3484592210988186396}
   - component: {fileID: 3484592210988186397}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Destroyer
   m_TagString: StartSpawn
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -2222,5 +2226,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1924872765}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
