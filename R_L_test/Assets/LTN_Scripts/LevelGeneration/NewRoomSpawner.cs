@@ -94,12 +94,12 @@ public class NewRoomSpawner : MonoBehaviour
     {
         if (collision.CompareTag("SpawnRoomPoint"))
         {
-            /*if (collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false) //création des salles dans des cas spéciaux (2 directions)
+            if (collision.GetComponent<NewRoomSpawner>().spawned == false && spawned == false) //création des salles dans des cas spéciaux (2 directions)
             {
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Destroy(gameObject);
-            }*/
-            if (collision.GetComponent<NewRoomSpawner>().spawned == true && spawned == true) // c'est le roomspawner qui instancie le closing, et pas la room. Le POLISHER
+            }
+            /*else if (collision.GetComponent<NewRoomSpawner>().spawned == true && spawned == true) // c'est le roomspawner qui instancie le closing, et pas la room. Le POLISHER
             {
                 Debug.Log("COLLIDE");
 
@@ -119,14 +119,13 @@ public class NewRoomSpawner : MonoBehaviour
                 {
                     closing.transform.gameObject.SetActive(true);
                 }
-                else if(idRoom.roomID == 0)
+                else if(idRoom.roomID == 0 || idRoom.roomID == 11)
                 {
 
                 }
                 Destroy(gameObject);
-                spawned = true;
-            }
-
+            }*/
+            spawned = true;
         }
         else if (collision.CompareTag("StartSpawn"))
         {
