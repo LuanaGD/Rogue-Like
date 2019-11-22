@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LTN/LTN_Scenes/_testScene.unity
+    path: Assets/LTN_Scenes/_testScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/LTN_Scenes/LTN_TitleScreen.unity
+    guid: 40c9370e5c572814195e6e11fe31de7a
+  - enabled: 1
+    path: Assets/LTN_Scenes/LTN_PauseScreen.unity
+    guid: b625171639451c1448e6b1449ca40d02
+  - enabled: 1
+    path: Assets/LTN_Scenes/LTN_GameOverScene.unity
+    guid: 72d17421ac8e99848ad05cab06e94c52
+  - enabled: 1
+    path: Assets/LTN_Scenes/LTN_GoodProcedural.unity
+    guid: 6eac9841e6bd716458e710b5cf538ac2
   m_configObjects: {}

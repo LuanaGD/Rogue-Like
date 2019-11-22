@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Cleaning v1/Clean1_Scenes/CleanScene1.unity
+- path: Assets/LTN_Scenes/LTN_GameOverScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
